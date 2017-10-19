@@ -5,16 +5,22 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "test": "jest"
+    "lint": "eslint server/**/*.js client/**/*.js ./*.js --fix",
+    "test": "jest -o",
+    "test:watch": "jest --watch",
+    "check": "npm run lint && npm run test",
+    "precommit": "npm run check",
+    "dev": "export NODE_ENV=development && nodemon index.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
     "webpack": "^3.6.0"
   },
   "dependencies": {
-    "express": "^4.16.2",
-    "jest": "^21.2.1"
+    "express": "^4.16.2"
   }
 }
