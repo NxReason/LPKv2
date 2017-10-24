@@ -9,12 +9,13 @@ class ModelsList {
 
   setModels(models) {
     if (!this.root) {
-      console.warn ('root element for models menu is not defined');
+      // eslint-disable-next-line no-console
+      console.warn('root element for models menu is not defined');
       return this;
     }
 
     this.clear();
-    models.forEach(m => {
+    models.forEach((m) => {
       this.root.innerHTML += createOption(m.uuid, m.name);
     });
 

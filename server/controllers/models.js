@@ -1,6 +1,6 @@
 const stubModels = [
   { name: 'model1', uuid: 0 },
-  { name: 'model2', uuid: 1 },
+  { name: 'model2', uuid: 1 }
 ];
 
 function getModels(req, res) {

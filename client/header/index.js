@@ -19,7 +19,7 @@ const Header = {
   async loadModel() {
     const uuid = this.modelsList.getSelectedModel();
     const model = await API.getModel(uuid);
-    console.log(model);
+    return model; // TODO: change to EE notification
   }
 };
 
