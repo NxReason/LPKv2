@@ -86,6 +86,20 @@ describe('GET /api/models', () => {
     expect(model.name).toBe('model1');
 
     expect(model.uuid).toBeDefined();
-    expect(model.uuid).toBe(42);
+    expect(model.uuid).toBe(0);
   });
 });
+
+describe('GET /api/models/:id', () => {
+  const options = {
+    uri: `${baseURL}api/models/1`,
+    resolveWithFullResponse: true,
+  };
+
+  test('return correct status & content-type', async () => {
+    const res = await request(options);
+    expect(res).toBeDefined();
+    expect(res.statusCode).toBe(200);
+    expect(res.headers['content-type']).toBe('application/json; charset=utf-8');
+  });
+})

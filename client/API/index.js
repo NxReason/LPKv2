@@ -6,9 +6,15 @@ const axios = require('axios');
  * Singleton
  */
 const API = {
-  getModels() {
-    axios.get('/api/models')
+  async getModels() {
+    const res = await axios.get('/api/models');
+    return res.data;
+  },
+
+  async getModel(id) {
+    const res = await axios.get(`/api/models/${id}`);
+    return res.data;
   }
 };
 
-module.exports = API;
+export default API;

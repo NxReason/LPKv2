@@ -16,6 +16,7 @@ const template = `
     <select id="models-list">
       <option selected disabled hidden>Загружается список моделей</option>
     </select>
+    <button id="load-model-btn">Загрузить</button>
   </header>
 
   <div id="root">Loading...</div>
