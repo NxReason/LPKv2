@@ -1,9 +1,7 @@
-const template = require('../views');
-
-function index(req, res) {
-  res.status(200).send(template);
-}
+const core = require('./core');
+const models = require('./models');
 
 module.exports = {
-  index
+  ...core,
+  ...models
 };
