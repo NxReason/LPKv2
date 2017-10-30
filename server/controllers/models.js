@@ -1,15 +1,12 @@
-const stubModels = [
-  { name: 'model1', uuid: 0 },
-  { name: 'model2', uuid: 1 }
-];
+const { getAll, getById } = require('../models');
 
 function getModels(req, res) {
-  res.json(stubModels);
+  res.json(getAll());
 }
 
 function getModel(req, res) {
   const { id } = req.params;
-  res.json(stubModels[id]);
+  res.json(getById(parseInt(id, 10)));
 }
 
 module.exports = { getModels, getModel };

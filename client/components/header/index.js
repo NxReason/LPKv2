@@ -1,26 +1,33 @@
-import API from '../API';
+import API from '../../api';
+import EventEmitter from '../../util/eventEmitter';
 import ModelsList from './modelsList';
 
-const Header = {
-  init() {
+const Header = (function Header() {
+  function init() {
     const $modelsListRoot = document.getElementById('models-list');
     this.modelsList = new ModelsList($modelsListRoot);
     this.loadModels();
 
     const $loadModelBtn = document.getElementById('load-model-btn');
     $loadModelBtn.addEventListener('click', this.loadModel.bind(this));
-  },
+  }
 
-  async loadModels() {
+  async function loadModels() {
     const models = await API.getModels();
     this.modelsList.setModels(models);
-  },
+  }
 
-  async loadModel() {
+  async function loadModel() {
     const uuid = this.modelsList.getSelectedModel();
     const model = await API.getModel(uuid);
-    return model; // TODO: change to EE notification
+    EventEmitter.emit('MODEL_LOADED', model);
   }
-};
+
+  return {
+    init,
+    loadModels,
+    loadModel
+  };
+}());
 
 export default Header;

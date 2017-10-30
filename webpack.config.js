@@ -9,7 +9,7 @@ const extractSass = new ExtractTextPlugin({
   disable: isDev
 });
 
-const pathsToClean = ['assets'];
+const pathsToClean = ['assets/css', 'assets/js'];
 const cleanPlugin = new CleanWebpackPlugin(pathsToClean);
 
 const config = {

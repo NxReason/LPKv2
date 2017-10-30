@@ -19,7 +19,9 @@ const template = `
     <button id="load-model-btn">Загрузить</button>
   </header>
 
-  <div id="root">Loading...</div>
+  <main class="content">
+    <div id="workarea" class="workarea"></div>
+  </main>
   <script src="${isDev ? 'http://localhost:8080' : 'js'}/app.bundle.js" type="text/javascript"></script>
 </body>
 </html>
