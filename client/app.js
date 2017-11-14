@@ -8,6 +8,7 @@ import Header from './components/header';
 import EventEmitter from './util/eventEmitter';
 import Model from './model';
 import ModelView from './components/model';
+// import MessageBox from './components/model/messageBox';
 
 let model;
 /**

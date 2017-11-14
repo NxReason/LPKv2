@@ -24,7 +24,8 @@ const stubModels = [
             { uuid: 3, name: 'priv11', value: 125.15 },
             { uuid: 4, name: 'priv12', value: 3456.5 }
           ]
-        }
+        },
+        state: 'regular state'
       },
 
       {
@@ -46,7 +47,8 @@ const stubModels = [
             { uuid: 5, name: 'priv21', value: 345.435 },
             { uuid: 6, name: 'priv22', value: 25.5 }
           ]
-        }
+        },
+        state: 'invalid state'
       },
 
       {
@@ -66,7 +68,8 @@ const stubModels = [
             { uuid: 3, name: 'priv31', value: 324.5 },
             { uuid: 4, name: 'priv32', value: 456.534 }
           ]
-        }
+        },
+        state: 'regular state'
       }
     ],
 

@@ -21,6 +21,14 @@ const template = `
 
   <main class="content">
     <div id="workarea" class="workarea"></div>
+    <div id="message-box" class="message-box">
+      <div class="message-box__header">
+        <i class="icon icon-close"></i>
+      </div>
+      <div class="message-box__info">
+
+      </div>
+    </div>
   </main>
   <script src="${isDev ? 'http://localhost:8080' : 'js'}/app.bundle.js" type="text/javascript"></script>
 </body>

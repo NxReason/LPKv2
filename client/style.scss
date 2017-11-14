@@ -1,5 +1,6 @@
 @import 'sass/variables';
 @import 'sass/common';
+@import 'sass/icons';
 
 // modules
 @import 'components/header/styles';
@@ -7,3 +8,4 @@
 @import 'components/model/device/style';
 @import 'components/model/sensor/style';
 @import 'components/model/controller/style';
+@import 'components/model/messageBox/style';
