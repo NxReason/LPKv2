@@ -1,0 +1,13 @@
+.workarea {
+  background-color: #eee;
+
+  width: 100%;
+  height: 70%;
+  min-width: 800px;
+  min-height: 500px;
+  position: relative;
+}
+
+.workarea .component {
+	position: absolute;
+}

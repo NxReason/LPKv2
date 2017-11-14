@@ -3,7 +3,7 @@ import ControllerFactory from './controller/factory';
 import SensorFactory from './sensor/factory';
 
 class Model {
-  constructor({ uuid, name, devices, sensors, controllers }) {
+  constructor({ uuid, name, devices = [], sensors = [], controllers = [] }) {
     this.uuid = uuid;
     this.name = name;
 

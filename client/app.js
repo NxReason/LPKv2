@@ -18,7 +18,8 @@ function initApp() {
 
   EventEmitter.on('MODEL_LOADED', (data) => {
     model = new Model(data);
-    ModelView.render(model);
+    console.log(model);
+    ModelView.render(data);
   });
 }
 
