@@ -1,0 +1,107 @@
+.controller {
+  display: flex;
+  flex-direction: column;
+
+  &-name {
+    text-align: center;
+    max-width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Switch
+.controller-switch {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  margin: 3px auto;
+}
+.controller-switch input {
+  display: none;
+}
+.controller-switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+.controller-switch__slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  transition: .4s;
+  border-radius: 50%;
+}
+.controller-switch__slider:after {
+  position: absolute;
+  content: "off";
+  height: 26px;
+  width: 26px;
+  right: 2px;
+  bottom: 0px;
+  color: #fff;
+  font-size: .9em;
+}
+input:checked + .controller-switch__slider {
+  background-color: $primary-blue;
+}
+input:focus + .controller-switch__slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input:checked + .controller-switch__slider:before {
+  transform: translateX(26px);
+}
+input:checked + .controller-switch__slider:after {
+  content: "on";
+  left: 6px;
+}
+
+// Range
+.controller-range {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
+  span {
+    display: inline-block;
+
+    &:first-child {
+      padding-right: 5px;
+    }
+    &:last-child {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  input {
+    display: inline-block;
+    cursor: pointer;
+    flex: 1;
+  }
+}
+.controller-range__current-value {
+  display: flex;
+  justify-content: center;
+
+  span {
+    display: inline-block;
+    color: #fff;
+    background-color: $primary-blue;
+    height: 25px;
+    padding: 5px;
+    margin-top: 3px;
+    border-radius: 5px;
+  }
+}

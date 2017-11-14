@@ -1,9 +1,14 @@
+import { getPositionString } from '../../../util/';
 import sensorTypes from '../../../config/sensorTypes';
 
-function getTextSensorHtml({ uuid, position: { y: top, x: left }, props }) {
+function getTextSensorHtml({ uuid, position, props }) {
+  const style = getPositionString(position);
   return `
-    <div class="sensor sensor-text" style="position: absolute; top: ${top}px; left: ${left}px" data-uuid=${uuid}>
-      ${props.value}
+    <div class="sensor sensor-text" style="${style}" data-uuid=${uuid}>
+      <div>
+        <span class="sensor-text__value">${props.value}</span>
+        <span>${props.ext}</span>
+      </div>
     </div>
   `;
 }

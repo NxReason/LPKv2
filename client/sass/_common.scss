@@ -6,7 +6,12 @@
 
 body {
   font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
-  color: #333;
+  font-size: 100%;
+  color: #222;
+}
+
+p, span {
+	font-size: .85rem;
 }
 
 .content {

@@ -14,11 +14,17 @@ const stubModels = [
         // характеристики устройства
         name: 'Device 1',
         uuid: 0,
-        parameters: [
-          { uuid: 0, name: 'prm11', value: 42.15 },
-          { uuid: 1, name: 'prm12', value: 12.345 },
-          { uuid: 2, name: 'prm13', value: 3546.35 }
-        ]
+        parameters: {
+          public: [
+            { uuid: 0, name: 'prm11', value: 42.15 },
+            { uuid: 1, name: 'prm12', value: 12.345 },
+            { uuid: 2, name: 'prm13', value: 3546.35 }
+          ],
+          private: [
+            { uuid: 3, name: 'priv11', value: 125.15 },
+            { uuid: 4, name: 'priv12', value: 3456.5 }
+          ]
+        }
       },
 
       {
@@ -28,13 +34,19 @@ const stubModels = [
 
         name: 'Device 2 with a very long name and some version456 numbers',
         uuid: 1,
-        parameters: [
-          { uuid: 0, name: 'prm21 with another long name and big value', value: 125125345.325 },
-          { uuid: 1, name: 'prm22', value: 64.34 },
-          { uuid: 2, name: 'prm23', value: 546.563 },
-          { uuid: 3, name: 'prm24', value: 83.35 },
-          { uuid: 4, name: 'prm25', value: 356.53 }
-        ]
+        parameters: {
+          public: [
+            { uuid: 0, name: 'prm21 with another long name and big value', value: 125125345.325 },
+            { uuid: 1, name: 'prm22', value: 64.34 },
+            { uuid: 2, name: 'prm23', value: 546.563 },
+            { uuid: 3, name: 'prm24', value: 83.35 },
+            { uuid: 4, name: 'prm25', value: 356.53 }
+          ],
+          private: [
+            { uuid: 5, name: 'priv21', value: 345.435 },
+            { uuid: 6, name: 'priv22', value: 25.5 }
+          ]
+        }
       },
 
       {
@@ -44,11 +56,17 @@ const stubModels = [
 
         name: 'Device 3',
         uuid: 2,
-        parameters: [
-          { uuid: 0, name: 'prm31', value: 345.15 },
-          { uuid: 1, name: 'prm32', value: 345.356 },
-          { uuid: 2, name: 'prm33', value: 3145.35 }
-        ]
+        parameters: {
+          public: [
+            { uuid: 0, name: 'prm31', value: 345.15 },
+            { uuid: 1, name: 'prm32', value: 345.356 },
+            { uuid: 2, name: 'prm33', value: 3145.35 }
+          ],
+          private: [
+            { uuid: 3, name: 'priv31', value: 324.5 },
+            { uuid: 4, name: 'priv32', value: 456.534 }
+          ]
+        }
       }
     ],
 
@@ -108,7 +126,8 @@ const stubModels = [
         type: 'TEXT',
 
         props: {
-          value: 151515
+          value: 151515,
+          ext: 'cstm'
         }
       },
 
@@ -120,32 +139,31 @@ const stubModels = [
         type: 'TEXT',
 
         props: {
-          value: 42
+          value: 42,
+          ext: '&#8451'
         }
       }
+    ],
+
+    // контроллеры (устройства ввода пользователя)
+    controllers: [
+      {
+        uuid: 0,
+        name: 'medium size name',
+        position: { x: 20, y: 270 },
+        type: 'SWITCH',
+        value: false
+      },
+
+      {
+        uuid: 0,
+        name: 'really long controller name which cant be placed in single line',
+        position: { x: 400, y: 25 },
+        type: 'RANGE',
+        value: 15,
+        limits: { min: 0, max: 120 }
+      }
     ]
-
-    // // контроллеры (устройства ввода пользователя)
-    // controllers: [
-    //   {
-    //     uuid: 0,
-    //     name: 'ctrl 1',
-    //     position: { x: 25, y: 25 },
-    //     size: { w: 30, h: 15 },
-    //     type: 'SWITCH',
-    //     value: false
-    //   },
-
-    //   {
-    //     uuid: 0,
-    //     name: 'ctrl 1',
-    //     position: { x: 55, y: 25 },
-    //     size: { w: 50, h: 15 },
-    //     type: 'RANGE',
-    //     value: 15,
-    //     limits: { min: 0, max: 120 }
-    //   }
-    // ]
   },
 
   { name: 'model2', uuid: 1 }

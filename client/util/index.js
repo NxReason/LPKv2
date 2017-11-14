@@ -12,6 +12,14 @@ export function arrToMap(arr, key) {
   }, {});
 }
 
+export function getPositionString(position) {
+  return `position: absolute; top: ${position.y || 0}px; left: ${position.x || 0}px;`;
+}
+
+export function getSizeString(size) {
+  return `width: ${size.w || 0}px; height: ${size.h || 0}px;`;
+}
+
 export function getStyleString({ position, size }) {
-  return `position: absolute; top: ${position.y || 0}px; left: ${position.x || 0}px; width: ${size.w || 0}px; height: ${size.h || 0}px`;
+  return `${getPositionString(position)} ${getSizeString(size)}`;
 }
