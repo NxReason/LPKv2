@@ -103,19 +103,19 @@ const stubModels = [
       {
         uuid: 0,
         name: 'sensor 1',
-        position: { x: 120, y: 30 },
+        position: { x: 37, y: 100 },
         size: { w: 50, h: 25 },
         type: 'TEXT',
 
         props: {
-          value: 0
+          value: 151515
         }
       },
 
       {
         uuid: 0,
         name: 'sensor 2',
-        position: { x: 250, y: 50 },
+        position: { x: 475, y: 250 },
         size: { w: 60, h: 35 },
         type: 'TEXT',
 
