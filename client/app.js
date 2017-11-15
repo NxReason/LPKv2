@@ -22,6 +22,18 @@ function initApp() {
     console.log(model);
     ModelView.render(data);
   });
+
+  EventEmitter.on('DVC_CLICKED', (data) => {
+    console.log(data);
+  });
+
+  EventEmitter.on('CTR_SWITCH_CLICKED', (data) => {
+    console.log(data);
+  });
+
+  EventEmitter.on('CTR_RANGE_CLICKED', (data) => {
+    console.log(data);
+  });
 }
 
 /**

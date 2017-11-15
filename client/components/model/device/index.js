@@ -5,8 +5,8 @@ const Device = {
     const style = getStyleString({ position, size });
 
     return `
-      <div class="device" data-uuid="${uuid}" id="device-${uuid}" style="${style}">
-        <img class="device-img" src="img/${img}" alt="" />
+      <div class="device" id="device-${uuid}" style="${style}">
+        <img class="device-img" src="img/${img}" alt="" data-type="dvc" data-uuid="${uuid}" />
       </div>
     `;
   }

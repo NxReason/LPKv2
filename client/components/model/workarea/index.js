@@ -1,4 +1,5 @@
 import { jsPlumb } from 'jsplumb';
+import EventEmitter from '../../../util/eventEmitter';
 
 const $area = document.getElementById('workarea');
 
@@ -38,5 +39,31 @@ const Workarea = {
     });
   }
 };
+
+$area.addEventListener('click', (e) => {
+  const { type } = e.target.dataset;
+
+  if (!type) {
+    return;
+  }
+
+  const { uuid } = e.target.dataset;
+
+  switch (type) {
+    case 'dvc':
+      EventEmitter.emit('DVC_CLICKED', { uuid });
+      break;
+    case 'ctr-switch':
+      const { checked } = e.target;
+      EventEmitter.emit('CTR_SWITCH_CLICKED', { uuid, checked });
+      break;
+    case 'ctr-range':
+      const { value } = e.target;
+      EventEmitter.emit('CTR_RANGE_CLICKED', { uuid, value: parseInt(value, 10) });
+      break;
+    default:
+      break;
+  }
+});
 
 export default Workarea;
