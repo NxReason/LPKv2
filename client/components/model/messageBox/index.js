@@ -21,7 +21,7 @@ function deviceHtml(name, props, state) {
       ${propsList}
     </ul>
 
-    <p class="message-box-text">${state}</p>
+    <p class="message-box-state">${state}</p>
   `;
 }
 

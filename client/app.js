@@ -32,7 +32,8 @@ function initApp() {
   });
 
   EventEmitter.on('CTR_RANGE_CLICKED', (data) => {
-    console.log(data);
+    model.setControllerValue(data);
+    ModelView.setRangeValue(data);
   });
 }
 

@@ -17,6 +17,10 @@ const ModelView = {
       sensors: sensorsHtml,
       controllers: controllersHtml
     });
+  },
+
+  setRangeValue(data) {
+    Controller.setRangeValue(data);
   }
 };
 

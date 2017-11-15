@@ -17,7 +17,7 @@ function getSwitchControllerHtml({ uuid, name, position, value }) {
 function getRangeControllerHtml({ uuid, name, position, value, limits: { min, max } }) {
   const style = getPositionString(position);
   return `
-    <div class="controller" style="${style}" data-uuid="${uuid}">
+    <div id="ctr-${uuid}" class="controller" style="${style}" data-uuid="${uuid}">
       <span class="controller-name">${name}</span>
       <div class="controller-range">
         <span>${min}</span>
@@ -41,6 +41,12 @@ const Controller = {
       default:
         throw new Error(`Error: Wrong controller type: ${controller.type}`);
     }
+  },
+
+  setRangeValue({ uuid, value }) {
+    const $ctr = document.getElementById(`ctr-${uuid}`);
+    const $value = $ctr.querySelector('.controller-range__current-value > span');
+    $value.textContent = value;
   }
 };
 

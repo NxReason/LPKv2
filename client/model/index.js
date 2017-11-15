@@ -15,6 +15,11 @@ class Model {
   getDevice(uuid) {
     return this.devices.find(d => d.uuid === uuid);
   }
+
+  setControllerValue({ uuid, value }) {
+    const ctr = this.controllers.find(c => c.uuid === uuid);
+    ctr.value = value;
+  }
 }
 
 export default Model;
