@@ -8,7 +8,7 @@ import Header from './components/header';
 import EventEmitter from './util/eventEmitter';
 import Model from './model';
 import ModelView from './components/model';
-// import MessageBox from './components/model/messageBox';
+import MessageBox from './components/model/messageBox';
 
 let model;
 /**
@@ -19,12 +19,12 @@ function initApp() {
 
   EventEmitter.on('MODEL_LOADED', (data) => {
     model = new Model(data);
-    console.log(model);
     ModelView.render(data);
   });
 
-  EventEmitter.on('DVC_CLICKED', (data) => {
-    console.log(data);
+  EventEmitter.on('DVC_CLICKED', ({ uuid }) => {
+    const device = model.getDevice(uuid);
+    MessageBox.showDevice(device);
   });
 
   EventEmitter.on('CTR_SWITCH_CLICKED', (data) => {

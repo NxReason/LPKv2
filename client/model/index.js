@@ -11,6 +11,10 @@ class Model {
     this.sensors = sensors.map(s => SensorFactory(s));
     this.controllers = controllers.map(c => ControllerFactory(c));
   }
+
+  getDevice(uuid) {
+    return this.devices.find(d => d.uuid === uuid);
+  }
 }
 
 export default Model;

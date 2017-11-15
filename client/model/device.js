@@ -1,14 +1,15 @@
 import { arrToMap } from '../util';
 
 class Device {
-  constructor(data) {
-    const { name, uuid, parameters } = data;
+  constructor({ name, uuid, parameters, state }) {
     this.name = name;
     this.uuid = uuid;
 
     this.parameters = {};
     this.parameters.public = arrToMap(parameters.public, 'uuid');
     this.parameters.private = arrToMap(parameters.private, 'uuid');
+
+    this.state = state;
   }
 }
 

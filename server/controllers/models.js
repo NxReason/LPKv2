@@ -6,7 +6,7 @@ function getModels(req, res) {
 
 function getModel(req, res) {
   const { id } = req.params;
-  res.json(getById(parseInt(id, 10)));
+  res.json(getById(id));
 }
 
 module.exports = { getModels, getModel };

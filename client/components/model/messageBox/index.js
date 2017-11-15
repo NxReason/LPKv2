@@ -11,6 +11,20 @@ function msgHtml(msg, level) {
   `;
 }
 
+function deviceHtml(name, props, state) {
+  const propsList = Object.values(props).map(prop => `<li>${prop.name}: <b>${prop.value.toFixed(2)}</b></li>`).join('');
+  return `
+    <h2 class="message-box-subheader">${name}</h2>
+
+    <p class="message-box-text">Свойства устройства:</p>
+    <ul class="message-box-props">
+      ${propsList}
+    </ul>
+
+    <p class="message-box-text">${state}</p>
+  `;
+}
+
 const MessageBox = {
   show() {
     $box.style.display = 'block';
@@ -32,12 +46,7 @@ const MessageBox = {
 
   showDevice({ name, parameters: { public: props }, state }) {
     MessageBox.show();
-    console.log(`Device: ${name}`);
-    console.log('Properties');
-    props.forEach((p) => {
-      console.log(`\t${p.name}: ${p.value}`);
-    });
-    console.log(`State: ${state}`);
+    $boxInfo.innerHTML = deviceHtml(name, props, state);
   }
 };
 
