@@ -6,11 +6,10 @@ import './style.scss';
 
 import Header from './components/header';
 import EventEmitter from './util/eventEmitter';
-import Model from './model';
+import Dispatcher from './dispatcher';
 import ModelView from './components/model';
 import MessageBox from './components/model/messageBox';
 
-let model;
 /**
  * Provides app initialization logic
  */
@@ -18,22 +17,26 @@ function initApp() {
   Header.init();
 
   EventEmitter.on('MODEL_LOADED', (data) => {
-    model = new Model(data);
+    Dispatcher.init(data);
     ModelView.render(data);
   });
 
   EventEmitter.on('DVC_CLICKED', ({ uuid }) => {
-    const device = model.getDevice(uuid);
+    const device = Dispatcher.getDevice(uuid);
     MessageBox.showDevice(device);
   });
 
   EventEmitter.on('CTR_SWITCH_CLICKED', (data) => {
-    console.log(data);
+    Dispatcher.switchControllerChange(data);
   });
 
   EventEmitter.on('CTR_RANGE_CLICKED', (data) => {
-    model.setControllerValue(data);
+    Dispatcher.rangeControllerChange(data);
     ModelView.setRangeValue(data);
+  });
+
+  EventEmitter.on('DVC_PARAM_CHANGED', (data) => {
+    Dispatcher.deviceParamChange(data);
   });
 }
 

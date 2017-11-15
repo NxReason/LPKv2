@@ -13,7 +13,27 @@ class Model {
   }
 
   getDevice(uuid) {
-    return this.devices.find(d => d.uuid === uuid);
+    return this.getElement(this.devices, uuid);
+  }
+
+  getController(uuid) {
+    return this.getElement(this.controllers, uuid);
+  }
+
+  /* eslint-disable class-methods-use-this */
+  getElement(coll, uuid) {
+    return coll.find(el => el.uuid === uuid);
+  }
+
+  setDeviceParam({ uuid, param, delta }) {
+    const device = this.getDevice(uuid);
+    if (device.parameters.public[param]) {
+      device.parameters.public[param].value += delta;
+    } else if (device.parameters.private[param]) {
+      device.parameters.private[param].value += delta;
+    } else {
+      console.warn('foo');
+    }
   }
 
   setControllerValue({ uuid, value }) {

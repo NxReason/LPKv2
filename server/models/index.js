@@ -79,8 +79,8 @@ const stubModels = [
       { color: '#999', width: 3, elements: [{ uuid: 1, position: 'Top' }, { uuid: 2, position: 'Right' }] }
     ],
 
-    // // каналы (для обмена информацией)
-    // channels: [
+    // каналы (для обмена информацией)
+    channels: [
     //   {
     //     type: 'DS',
     //     device: 0,
@@ -95,29 +95,29 @@ const stubModels = [
     //     sensor: 1
     //   },
 
-    //   {
-    //     type: 'CD',
-    //     controller: 0,
-    //     device: {
-    //       uuid: 0,
-    //       parameters: [
-    //         { uuid: 0, fn: 'DIFF', value: 50 },
-    //         { uuid: 1, fn: 'DIFF', value: 15 }
-    //       ]
-    //     }
-    //   },
+      {
+        type: 'CD',
+        controller: '0',
+        device: {
+          uuid: '0',
+          parameters: [
+            { uuid: '0', fn: 'DIFF', value: 50 },
+            { uuid: '1', fn: 'DIFF', value: 15 }
+          ]
+        }
+      },
 
-    //   {
-    //     type: 'CD',
-    //     controller: 1,
-    //     device: {
-    //       uuid: 1,
-    //       parameters: [
-    //         { uuid: 2, fn: 'LINEAR' }
-    //       ]
-    //     }
-    //   }
-    // ],
+      {
+        type: 'CD',
+        controller: '1',
+        device: {
+          uuid: '1',
+          parameters: [
+            { uuid: '1', fn: 'LINEAR' }
+          ]
+        }
+      }
+    ],
 
     // датчики (отображение данных пользователю)
     sensors: [
@@ -153,7 +153,7 @@ const stubModels = [
       {
         uuid: '0',
         name: 'medium size name',
-        position: { x: 20, y: 270 },
+        position: { x: 20, y: 285 },
         type: 'SWITCH',
         value: false
       },
