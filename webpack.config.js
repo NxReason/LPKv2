@@ -61,6 +61,13 @@ const config = {
     ]
   },
 
+  resolve: {
+    modules: [
+      path.resolve('./client'),
+      path.resolve('./node_modules')
+    ]
+  },
+
   devServer: {
     contentBase: './assets',
     publicPath: '/',

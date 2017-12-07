@@ -4,11 +4,11 @@
 
 import './style.scss';
 
-import Header from './components/header';
+import Header from './view/header';
 import EventEmitter from './util/eventEmitter';
 import Dispatcher from './dispatcher';
-import ModelView from './components/model';
-import MessageBox from './components/model/messageBox';
+import ModelView from './view/model';
+import MessageBox from './view/messageBox';
 
 /**
  * Provides app initialization logic
@@ -17,8 +17,8 @@ function initApp() {
   Header.init();
 
   EventEmitter.on('MODEL_LOADED', (data) => {
+    ModelView.init(data).render();
     Dispatcher.init(data);
-    ModelView.render(data);
   });
 
   EventEmitter.on('DVC_CLICKED', ({ uuid }) => {

@@ -3,9 +3,8 @@
 @import 'sass/icons';
 
 // modules
-@import 'components/header/styles';
-@import 'components/model/workarea/style';
-@import 'components/model/device/style';
-@import 'components/model/sensor/style';
-@import 'components/model/controller/style';
-@import 'components/model/messageBox/style';
+@import 'view/header/styles';
+@import 'view/model/device/style';
+@import 'view/model/sensor/style';
+@import 'view/model/controller/style';
+@import 'view/model/style';
