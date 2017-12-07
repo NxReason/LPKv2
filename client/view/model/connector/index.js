@@ -1,3 +1,5 @@
+import { jsPlumb } from 'jsplumb';
+
 export default function createConnection({ color: stroke = '#555', width: strokeWidth = 2, elements: [fst, snd] }) {
   jsPlumb.connect({
     source: `device-${fst.uuid}`,

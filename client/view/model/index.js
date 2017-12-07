@@ -1,6 +1,7 @@
 import Device from './device';
 import SensorFactory from './sensor';
 import Controller from './controller';
+import createConnection from './connector';
 
 const $area = document.getElementById('workarea');
 
@@ -16,7 +17,7 @@ const ModelView = {
       ? sensors.map(s => SensorFactory.init($area, `sensor-${s.uuid}`, s))
       : [];
 
-    this.connections = connections || [];
+    this.connections = connections;
 
     return this;
   },
@@ -24,6 +25,10 @@ const ModelView = {
   render() {
     [this.devices, this.controllers, this.sensors]
       .forEach(group => group.forEach(el => el.render()));
+
+    if (this.connections) {
+      this.connections.forEach(conn => createConnection(conn));
+    }
   },
 
   setRangeValue(data) {
