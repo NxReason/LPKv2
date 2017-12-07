@@ -1,4 +1,4 @@
-import { arrToMap } from '../util';
+import { arrToMap } from 'helpers';
 
 class Device {
   constructor({ name, uuid, parameters, state }) {

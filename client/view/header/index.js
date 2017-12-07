@@ -1,5 +1,5 @@
 import API from '../../api';
-import EventEmitter from '../../util/eventEmitter';
+import EventEmitter from 'helpers/eventEmitter';
 import ModelsList from './modelsList';
 
 const Header = (function Header() {

@@ -1,5 +1,5 @@
 import Device from './device';
-import Sensor from './sensor';
+import SensorFactory from './sensor';
 import Controller from './controller';
 
 const $area = document.getElementById('workarea');
@@ -12,7 +12,9 @@ const ModelView = {
     
     this.controllers = [];
 
-    this.sensors = [];
+    this.sensors = sensors
+      ? sensors.map(s => SensorFactory.init($area, `sensor-${s.uuid}`, s))
+      : [];
 
     this.connections = connections || [];
 

@@ -5,7 +5,7 @@
 import './style.scss';
 
 import Header from './view/header';
-import EventEmitter from './util/eventEmitter';
+import EventEmitter from 'helpers/eventEmitter';
 import Dispatcher from './dispatcher';
 import ModelView from './view/model';
 import MessageBox from './view/messageBox';

@@ -1,5 +1,5 @@
-import controllerTypes from '../../../config/controllerTypes';
-import { getPositionString } from '../../../util';
+import controllerTypes from 'config/controllerTypes';
+import { getPositionString } from 'helpers';
 
 function getSwitchControllerHtml({ uuid, name, position, value }) {
   const style = getPositionString(position);

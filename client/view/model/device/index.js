@@ -1,4 +1,4 @@
-import { getStyleString, getSizeString } from '../../../util';
+import { getStyleString, getSizeString } from 'helpers';
 import Component from 'view/model/component';
 
 const template = (id, style, size, img) => `
@@ -16,7 +16,7 @@ class Device extends Component {
   }
 
   setListeners() {
-    console.log(this.wrapper);
+    console.log('setting listener for device');
   }
 }
 

@@ -1,4 +1,4 @@
-import EventEmitter from '../util/eventEmitter';
+import EventEmitter from 'helpers/eventEmitter';
 import Types from './types';
 
 import { linear, diff } from './fn';
