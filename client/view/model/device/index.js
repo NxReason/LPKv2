@@ -3,7 +3,7 @@ import Component from 'view/model/component';
 
 const template = (id, style, size, img) => `
 <div class="device" id="${id}" style="${style}">
-  <img class="device-img" src="img/${img}" alt="" data-type="dvc" ref="image" style="${size}" />
+  <img class="device-img" src="img/${img}" alt="" ref="image" style="${size}" />
 </div>
 `;
 

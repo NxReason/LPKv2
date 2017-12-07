@@ -25,6 +25,7 @@ class TextSensor extends Component {
 
     this.refs.value.innerHTML = this.value;
     this.refs.ext.innerHTML = this.ext;
+    this.refs.value.innerHTML = 11;
   }
 
   setValue(value) {
@@ -35,6 +36,12 @@ class TextSensor extends Component {
   setExt(ext) {
     this.ext = ext;
     this.refs.ext.innerHTML = ext;
+  }
+
+  setListeners() {
+    console.log('sensor listener');
+    console.log(this.refs.value);
+    this.refs.value.addEventListener('click', () => { console.log('foo'); });
   }
 }
 

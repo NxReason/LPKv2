@@ -7,7 +7,7 @@ class Component {
 
   render() {
     if (this.template === null) {
-      console.warn(`Element has no template: ${this}`);
+      console.warn(`Element has no template: ${this.id}`);
       return;
     }
 

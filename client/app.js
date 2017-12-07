@@ -18,7 +18,7 @@ function initApp() {
 
   EventEmitter.on('MODEL_LOADED', (data) => {
     ModelView.init(data).render();
-    Dispatcher.init(data);
+    // Dispatcher.init(data);
   });
 
   EventEmitter.on('DVC_CLICKED', ({ uuid }) => {

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="box-1">FOO</div>
+  </div>
+
+  <script>
+    const box1 = document.getElementById('box-1');
+    box1.innerHTML = 'bar';
+
+    const wrapper = document.getElementById('wrapper');
+    wrapper.innerHTML += '<p>lasVasyan</p>';
+
+    box1.innerHTML = '42';
+  </script>
+</body>
+</html>
