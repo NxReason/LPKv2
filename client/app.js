@@ -4,11 +4,11 @@
 
 import './style.scss';
 
-import Header from './view/header';
 import EventEmitter from 'helpers/eventEmitter';
-import Dispatcher from './dispatcher';
-import ModelView from './view/model';
+import Header from './view/header';
 import MessageBox from './view/messageBox';
+import View from './view/model';
+import Model from './model';
 
 /**
  * Provides app initialization logic
@@ -17,26 +17,25 @@ function initApp() {
   Header.init();
 
   EventEmitter.on('MODEL_LOADED', (data) => {
-    ModelView.init(data).render();
-    // Dispatcher.init(data);
+    View.init(data).render();
   });
 
-  EventEmitter.on('DVC_CLICKED', ({ uuid }) => {
-    const device = Dispatcher.getDevice(uuid);
-    MessageBox.showDevice(device);
+  /**
+   * User action listeners
+   */
+  EventEmitter.on('CONTROLLER_VALUE_CHANGED', (payload) => {
+    // TODO
   });
 
-  EventEmitter.on('CTR_SWITCH_CLICKED', (data) => {
-    Dispatcher.switchControllerChange(data);
+  EventEmitter.on('DEVICE_COMPONENT_CLICKED', (payload) => {
+    // TODO
   });
 
-  EventEmitter.on('CTR_RANGE_CLICKED', (data) => {
-    Dispatcher.rangeControllerChange(data);
-    ModelView.setRangeValue(data);
-  });
-
-  EventEmitter.on('DVC_PARAM_CHANGED', (data) => {
-    Dispatcher.deviceParamChange(data);
+  /**
+   * Model events listeners
+   */
+  EventEmitter.on('MODEL_PAREMETER_CHANGED', (payload) => {
+    MessageBox.updateDevice(payload);
   });
 }
 

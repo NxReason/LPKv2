@@ -1,8 +1,16 @@
 class Component {
-  constructor(parent, id) {
+  constructor(parent, { className, uuid, style }) {
     this.parent = parent;
-    this.id = id;
+    this.uuid = uuid;
+
+    this.wrapper = document.createElement('div');
+    if (className) { this.wrapper.classList.add(className); }
+    if (className && uuid) { this.wrapper.id = `${className}-${uuid}`; }
+    if (style) { this.wrapper.setAttribute('style', style); }
+
     this.template = null;
+
+    this.parent.appendChild(this.wrapper);
   }
 
   render() {
@@ -11,8 +19,7 @@ class Component {
       return;
     }
 
-    this.parent.innerHTML += this.template;
-    this.wrapper = this.parent.querySelector(`#${this.id}`);
+    this.wrapper.innerHTML += this.template;
     this.refs = Array.from(this.wrapper
       .querySelectorAll('[ref]'))
       .reduce((acc, refNode) => {

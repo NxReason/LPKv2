@@ -1,20 +1,19 @@
 import { getPositionString } from 'helpers';
 import Component from 'view/model/component';
 
-const template = (id, style) => `
-<div class="sensor sensor-text" style="${style}" id="${id}">
-  <div>
-    <span class="sensor-text__value" ref="value"></span>
-    <span ref="ext"></span>
-  </div>
+const template = () => `
+<div class="sensor-text">
+  <span class="sensor-text__value" ref="value"></span>
+  <span ref="ext"></span>
 </div>
 `;
 
 class TextSensor extends Component {
-  constructor(parent, id, { uuid, position, props: { value, ext } }) {
-    super(parent, id);
+  constructor(parent, { uuid, position, props: { value, ext } }) {
+    super(parent, { uuid, className: 'sensor' });
     const style = getPositionString(position);
-    this.template = template(id, style);
+    this.template = template();
+    this.wrapper.setAttribute('style', style);
 
     this.value = value;
     this.ext = ext;
@@ -25,7 +24,6 @@ class TextSensor extends Component {
 
     this.refs.value.innerHTML = this.value;
     this.refs.ext.innerHTML = this.ext;
-    this.refs.value.innerHTML = 11;
   }
 
   setValue(value) {
@@ -39,9 +37,7 @@ class TextSensor extends Component {
   }
 
   setListeners() {
-    console.log('sensor listener');
-    console.log(this.refs.value);
-    this.refs.value.addEventListener('click', () => { console.log('foo'); });
+    this.refs.value.addEventListener('click', () => { console.log('text sensor value clicked'); });
   }
 }
 

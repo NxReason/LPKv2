@@ -3,14 +3,14 @@ import SwitchController from './switchController';
 import RangeController from './rangeController';
 
 const ControllerFactory = {
-  init(parent, id, payload) {
+  init(parent, payload) {
     switch (payload.type) {
       case controllerTypes.SWITCH:
-        return new SwitchController(parent, id, payload);
+        return new SwitchController(parent, payload);
       case controllerTypes.RANGE:
-        return new RangeController(parent, id, payload);
+        return new RangeController(parent, payload);
       default:
-        throw new Error(`Error: Wrong controller type: ${controller.type}`);
+        throw new Error(`[Error] Wrong controller type: ${payload.type}`);
     }
   },
 };

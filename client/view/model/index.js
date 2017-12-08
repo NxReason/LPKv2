@@ -8,18 +8,18 @@ const $area = document.getElementById('workarea');
 const ModelView = {
   init({ devices, sensors, connections, controllers }) {
     this.devices = devices
-      ? devices.map(d => new Device($area, `device-${d.uuid}`, d))
+      ? devices.map(d => new Device($area, d))
       : [];
     
     this.controllers = controllers
-      ? controllers.map(c => ControllerFactory.init($area, `controller-${c.uuid}`, c))
+      ? controllers.map(c => ControllerFactory.init($area, c))
       : [];
 
     this.sensors = sensors
-      ? sensors.map(s => SensorFactory.init($area, `sensor-${s.uuid}`, s))
+      ? sensors.map(s => SensorFactory.init($area, s))
       : [];
 
-    // this.connections = connections;
+    this.connections = connections;
 
     return this;
   },
@@ -28,14 +28,10 @@ const ModelView = {
     [this.devices, this.controllers, this.sensors]
       .forEach(group => group.forEach(el => el.render()));
 
-    // if (this.connections) {
-    //   this.connections.forEach(conn => createConnection(conn));
-    // }
+    if (this.connections) {
+      this.connections.forEach(conn => createConnection(conn));
+    }
   },
-
-  setRangeValue(data) {
-    Controller.setRangeValue(data);
-  }
 };
 
 export default ModelView;

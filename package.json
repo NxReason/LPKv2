@@ -6,13 +6,13 @@
   "scripts": {
     "build": "npm run clean && webpack -p",
     "clean": "rm -rf assets/js assets/css",
-    "wds": "set NODE_ENV=development&& webpack-dev-server",
+    "wds": "export NODE_ENV=development && webpack-dev-server",
     "lint": "eslint server client ./*.js --fix",
     "test": "jest -o",
     "test:watch": "jest --watch",
     "check": "npm run lint && npm run test",
     "docs": "jsdoc client -d ./docs",
-    "dev": "set NODE_ENV=development&& nodemon index.js"
+    "dev": "export NODE_ENV=development && nodemon index.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

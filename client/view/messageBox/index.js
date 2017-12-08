@@ -1,7 +1,3 @@
-const $box = document.getElementById('message-box');
-const $boxInfo = $box.querySelector('.message-box__info');
-
-
 function msgHtml(msg, level) {
   return `
     <p class="message-box-text">
@@ -11,8 +7,12 @@ function msgHtml(msg, level) {
   `;
 }
 
+function propFormat(name, value) {
+  return `${name}: <b>${value.toFixed(2)}</b>`;
+}
+
 function deviceHtml(name, props, state) {
-  const propsList = Object.values(props).map(prop => `<li>${prop.name}: <b>${prop.value.toFixed(2)}</b></li>`).join('');
+  const propsList = Object.values(props).map(p => `<li data-name="${p.name}">${propFormat(p.name, p.value)}</li>`).join('');
   return `
     <h2 class="message-box-subheader">${name}</h2>
 
@@ -25,29 +25,54 @@ function deviceHtml(name, props, state) {
   `;
 }
 
+const $box = document.getElementById('message-box');
+const $boxInfo = $box.querySelector('.message-box__info');
+
 const MessageBox = {
+  // props
+  hidden: true,
+  currentDevice: null,
+
+  // methods
   show() {
     $box.style.display = 'block';
+    this.hidden = false;
   },
 
   hide() {
     $box.style.display = 'none';
+    this.hidden = true;
+  },
+
+  _plainMessage(msg, className) {
+    this.currentDevice = null;
+    MessageBox.show();
+    $box.innerHTMl = msgHtml(msg, className);
   },
 
   warn(msg) {
-    MessageBox.show();
-    $boxInfo.innerHTML = msgHtml(msg, 'warn');
+    _plainMessage(msg, 'warn');
   },
 
   info(msg) {
-    MessageBox.show();
-    $boxInfo.innerHTML = msgHtml(msg, 'info');
+    _plainMessage(msg, 'info');
   },
 
-  showDevice({ name, parameters: { public: props }, state }) {
+  showDevice({ uuid, name, parameters: { public: props }, state }) {
     MessageBox.show();
+    this.currentDevice = uuid;
     $boxInfo.innerHTML = deviceHtml(name, props, state);
-  }
+  },
+
+  updateDevice({ uuid, name, value }) {
+    // Ничего не делать, если устройство не показано в данный момент
+    if (hidden || (this.currentDevice !== uuid)) {
+      return;
+    }
+
+    const $li = $boxInfo.querySelector(`[data-name=${name}]`);
+    $li.innerHTML = propFormat(name, value);
+  },
 };
 
 const $close = $box.querySelector('.icon-close');
