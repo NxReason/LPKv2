@@ -12,7 +12,7 @@ function propFormat(name, value) {
 }
 
 function deviceHtml(name, props, state) {
-  const propsList = Object.values(props).map(p => `<li data-name="${p.name}">${propFormat(p.name, p.value)}</li>`).join('');
+  const propsList = Object.values(props).map(p => `<li data-uuid="${p.uuid}">${propFormat(p.name, p.value)}</li>`).join('');
   return `
     <h2 class="message-box-subheader">${name}</h2>
 
@@ -58,10 +58,11 @@ const MessageBox = {
     _plainMessage(msg, 'info');
   },
 
-  showDevice({ uuid, name, parameters: { public: props }, state }) {
+  showDevice({ uuid, name, parameters, state }) {
     MessageBox.show();
     this.currentDevice = uuid;
-    $boxInfo.innerHTML = deviceHtml(name, props, state);
+    const params = parameters.filter(p => p.type === 'public');
+    $boxInfo.innerHTML = deviceHtml(name, params, state);
   },
 
   updateDevice({ uuid, name, value }) {
@@ -70,7 +71,7 @@ const MessageBox = {
       return;
     }
 
-    const $li = $boxInfo.querySelector(`[data-name=${name}]`);
+    const $li = $boxInfo.querySelector(`[data-uuid=${uuid}]`);
     $li.innerHTML = propFormat(name, value);
   },
 };

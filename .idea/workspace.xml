@@ -2,20 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7a8485-fe4d-4cb2-a37e-cb5b298e92a6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/dispatcher/index.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/channels/fn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/channels/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/channels/types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/model/controller/controller.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/model/controller/factory.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/model/controller/rangeController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/model/controller/switchController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/model/device.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/model/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/model/sensor/factory.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/model/sensor/sensor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/model/sensor/textSensor.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app.js" afterPath="$PROJECT_DIR$/client/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/messageBox/index.js" afterPath="$PROJECT_DIR$/client/view/messageBox/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/model/component.js" afterPath="$PROJECT_DIR$/client/view/model/component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/model/controller/index.js" afterPath="$PROJECT_DIR$/client/view/model/controller/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/model/controller/rangeController.js" afterPath="$PROJECT_DIR$/client/view/model/controller/rangeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/model/controller/switchController.js" afterPath="$PROJECT_DIR$/client/view/model/controller/switchController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/model/device/index.js" afterPath="$PROJECT_DIR$/client/view/model/device/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/model/index.js" afterPath="$PROJECT_DIR$/client/view/model/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/model/sensor/index.js" afterPath="$PROJECT_DIR$/client/view/model/sensor/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/model/sensor/textSensor.js" afterPath="$PROJECT_DIR$/client/view/model/sensor/textSensor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/index.js" afterPath="$PROJECT_DIR$/server/models/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,20 +39,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding>
-                <element signature="e#36#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,7 +58,13 @@
         <option value="$PROJECT_DIR$/client/view/model/controller/rangeController.js" />
         <option value="$PROJECT_DIR$/client/view/model/index.js" />
         <option value="$PROJECT_DIR$/client/view/model/device/index.js" />
+        <option value="$PROJECT_DIR$/client/model/dependencies/index.js" />
+        <option value="$PROJECT_DIR$/client/model/events/index.js" />
+        <option value="$PROJECT_DIR$/client/model/index.js" />
+        <option value="$PROJECT_DIR$/client/model/dao/device.js" />
         <option value="$PROJECT_DIR$/client/app.js" />
+        <option value="$PROJECT_DIR$/client/model/dao/index.js" />
+        <option value="$PROJECT_DIR$/server/models/index.js" />
         <option value="$PROJECT_DIR$/client/view/messageBox/index.js" />
       </list>
     </option>
@@ -168,9 +163,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.6.0" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/west/dev/web/LPK/client/view/model/component.js" />
+    <property name="SearchEverywhereHistoryKey" value="models/&#9;FILE&#9;file:///home/west/dev/web/LPK/server/models" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/model" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -183,6 +183,36 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" value="" />
+      <option name="filePath" value="" />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <EXTENSION ID="com.jetbrains.nodejs.remote.docker.NodeJSDockerRunConfigurationExtension">
+        <option name="envVars">
+          <list />
+        </option>
+        <option name="extraHosts">
+          <list />
+        </option>
+        <option name="links">
+          <list />
+        </option>
+        <option name="networkDisabled" value="false" />
+        <option name="networkMode" value="bridge" />
+        <option name="portBindings">
+          <list />
+        </option>
+        <option name="publishAllPorts" value="false" />
+        <option name="version" value="1" />
+        <option name="volumeBindings">
+          <list />
+        </option>
+      </EXTENSION>
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -200,23 +230,23 @@
       <workItem from="1512614456154" duration="613000" />
       <workItem from="1512696401834" duration="188000" />
       <workItem from="1512696598817" duration="1900000" />
-      <workItem from="1512698506199" duration="3580000" />
+      <workItem from="1512698506199" duration="6089000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6281000" />
+    <option name="totallyTimeSpent" value="8790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="960" height="1056" extended-state="4" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33854166" sideWeight="0.49578947" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33854166" sideWeight="0.49578947" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.290625" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37473685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27604166" sideWeight="0.50421053" order="2" side_tool="true" content_ui="tabs" />
@@ -226,7 +256,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -276,17 +305,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/channels/fn.js">
+    <entry file="file://$PROJECT_DIR$/client/model/channels/fn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/channels/fn.js">
+    <entry file="file://$PROJECT_DIR$/client/model/channels/fn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -308,13 +339,6 @@
         <state relative-caret-position="306">
           <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/channels/fn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -394,14 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/model/controller/rangeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/view/model/device/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -434,17 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/view/messageBox/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="73" column="44" lean-forward="false" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
-          <folding>
-            <marker date="1512704672237" expanded="true" signature="73:149" ph="..." />
-            <marker date="1512704672237" expanded="true" signature="565:594" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/dispatcher/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -453,12 +458,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/model/controller/rangeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/model/channels/fn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/model/channels/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/model/dependencies/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/model/events/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
           <folding>
             <element signature="e#36#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/model/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/model/dao/device.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/model/dao/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="64" lean-forward="false" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="147" column="18" lean-forward="false" selection-start-line="147" selection-start-column="18" selection-end-line="147" selection-end-column="18" />
+          <caret line="155" column="18" lean-forward="false" selection-start-line="155" selection-start-column="18" selection-end-line="155" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/view/messageBox/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="73" column="50" lean-forward="false" selection-start-line="73" selection-start-column="50" selection-end-line="73" selection-end-column="50" />
+          <folding>
+            <marker date="1512707194256" expanded="true" signature="73:149" ph="..." />
+            <marker date="1512707194256" expanded="true" signature="565:594" ph="..." />
           </folding>
         </state>
       </provider>

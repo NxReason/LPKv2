@@ -18,6 +18,7 @@ function initApp() {
 
   EventEmitter.on('MODEL_LOADED', (data) => {
     View.init(data).render();
+    Model.init(data);
   });
 
   /**
@@ -27,8 +28,9 @@ function initApp() {
     // TODO
   });
 
-  EventEmitter.on('DEVICE_COMPONENT_CLICKED', (payload) => {
-    // TODO
+  EventEmitter.on('DEVICE_COMPONENT_CLICKED', ({ uuid }) => {
+    const device = Model.getDeviceById(uuid);
+    console.log(device);
   });
 
   /**
