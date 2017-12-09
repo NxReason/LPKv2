@@ -38,7 +38,7 @@ class SwitchController extends Component {
     this.refs.switch.addEventListener('click', () => {
       const value = this.refs.switch.checked;
       this.value = value;
-      EventEmitter.emit('CONTROLLER_VALUE_CHANGED', { uuid: this.uuid, value });
+      EventEmitter.emit('CONTROLLER_VALUE_CHANGED', { uuid: this.uuid, value, oldValue: !value });
     })
   }
 }

@@ -61,8 +61,7 @@ const MessageBox = {
   showDevice({ uuid, name, parameters, state }) {
     MessageBox.show();
     this.currentDevice = uuid;
-    const params = parameters.filter(p => p.type === 'public');
-    $boxInfo.innerHTML = deviceHtml(name, params, state);
+    $boxInfo.innerHTML = deviceHtml(name, parameters, state);
   },
 
   updateDevice({ uuid, name, value }) {

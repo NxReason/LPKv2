@@ -63,31 +63,31 @@ const stubModels = [
 
     // соединения (визуальные связи устройств)
     connections: [
-      { color: '#888', width: 5, elements: [{ uuid: 0, position: 'Right' }, { uuid: 1, position: 'Left' }] },
-      { color: '#999', width: 3, elements: [{ uuid: 1, position: 'Top' }, { uuid: 2, position: 'Right' }] }
+      { color: '#888', width: 5, elements: [{ uuid: 'device0', position: 'Right' }, { uuid: 'device1', position: 'Left' }] },
+      { color: '#999', width: 3, elements: [{ uuid: 'device1', position: 'Top' }, { uuid: 'device2', position: 'Right' }] }
     ],
 
     // зависимости (для обмена информацией)
     dependencies: [
-      {
-        type: 'DS',
-        device: 0,
-        parameter: 2,
-        sensor: 0
-      },
-
-      {
-        type: 'DS',
-        device: 1,
-        parameter: 0,
-        sensor: 1
-      },
+      // {
+      //   type: 'DS',
+      //   device: 0,
+      //   parameter: 2,
+      //   sensor: 0
+      // },
+      //
+      // {
+      //   type: 'DS',
+      //   device: 1,
+      //   parameter: 0,
+      //   sensor: 1
+      // },
 
       {
         type: 'CD',
-        controller: '0',
+        controller: 'ctr0',
         device: {
-          uuid: '0',
+          uuid: 'device0',
           parameters: [
             { uuid: '0', fn: 'DIFF', value: 50 },
             { uuid: '1', fn: 'DIFF', value: 15 }
@@ -97,9 +97,9 @@ const stubModels = [
 
       {
         type: 'CD',
-        controller: '1',
+        controller: 'ctr1',
         device: {
-          uuid: '1',
+          uuid: 'device1',
           parameters: [
             { uuid: '1', fn: 'LINEAR' }
           ]

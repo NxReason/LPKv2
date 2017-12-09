@@ -24,7 +24,7 @@ class RangeController extends Component {
     const style = getPositionString(position);
     this.wrapper.setAttribute('style', style);
 
-    this.value = value;
+    this.value = parseInt(value, 10);
   }
 
   render() {
@@ -41,10 +41,11 @@ class RangeController extends Component {
 
   setListeners() {
     this.refs.range.addEventListener('change', () => {
-      const { value } = this.refs.range;
+      const value = parseInt(this.refs.range.value, 10);
+      const oldValue = this.value;
       this.value = value;
       this.refs.current.textContent = value;
-      EventEmitter.emit('CONTROLLER_VALUE_CHANGED', { uuid: this.uuid, value });
+      EventEmitter.emit('CONTROLLER_VALUE_CHANGED', { uuid: this.uuid, value, oldValue });
     });
 
     this.refs.range.addEventListener('input', () => {

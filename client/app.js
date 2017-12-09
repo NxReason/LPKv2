@@ -25,12 +25,12 @@ function initApp() {
    * User action listeners
    */
   EventEmitter.on('CONTROLLER_VALUE_CHANGED', (payload) => {
-    // TODO
+    Model.handleControllerChange(payload);
   });
 
   EventEmitter.on('DEVICE_COMPONENT_CLICKED', ({ uuid }) => {
-    const device = Model.getDeviceById(uuid);
-    console.log(device);
+    const info = Model.getDeviceById(uuid).getPublicInfo();
+    MessageBox.showDevice(info);
   });
 
   /**

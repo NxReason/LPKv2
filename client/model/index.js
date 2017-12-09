@@ -11,6 +11,18 @@ const Model = {
 
   getDeviceById(uuid) {
     return this.dao.devices[uuid];
+  },
+
+  handleControllerChange(data) {
+    const actionsCD = this.dependencies.getActionsCD(data);
+    console.log(actionsCD);
+    actionsCD.forEach(({ device, type, parameter, value }) => {
+      this.dao.devices[device][type](parameter, value);
+    });
+  },
+
+  handleParameterChange(data) {
+    // TODO
   }
 };
 
