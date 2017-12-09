@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7a8485-fe4d-4cb2-a37e-cb5b298e92a6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/view/messageBox/style.scss" afterPath="$PROJECT_DIR$/client/view/messageBox/styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app.js" afterPath="$PROJECT_DIR$/client/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/model/dao/device.js" afterPath="$PROJECT_DIR$/client/model/dao/device.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/model/dependencies/index.js" afterPath="$PROJECT_DIR$/client/model/dependencies/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/model/index.js" afterPath="$PROJECT_DIR$/client/model/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/style.scss" afterPath="$PROJECT_DIR$/client/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/messageBox/index.js" afterPath="$PROJECT_DIR$/client/view/messageBox/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/model/controller/rangeController.js" afterPath="$PROJECT_DIR$/client/view/model/controller/rangeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/model/controller/switchController.js" afterPath="$PROJECT_DIR$/client/view/model/controller/switchController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/index.js" afterPath="$PROJECT_DIR$/server/models/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/model/dependencies/CD.js" afterPath="$PROJECT_DIR$/client/model/dependencies/CD.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,8 +28,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/model/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="55" lean-forward="false" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="55" />
+            <state relative-caret-position="360">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -93,10 +82,10 @@
         <option value="$PROJECT_DIR$/client/config/deviceMethods.js" />
         <option value="$PROJECT_DIR$/server/models/index.js" />
         <option value="$PROJECT_DIR$/client/model/index.js" />
-        <option value="$PROJECT_DIR$/client/model/dependencies/CD.js" />
         <option value="$PROJECT_DIR$/client/view/messageBox/index.js" />
         <option value="$PROJECT_DIR$/client/app.js" />
         <option value="$PROJECT_DIR$/client/model/dao/device.js" />
+        <option value="$PROJECT_DIR$/client/model/dependencies/CD.js" />
       </list>
     </option>
   </component>
@@ -193,14 +182,8 @@
               <item name="LPK" type="b2602c69:ProjectViewProjectNode" />
               <item name="LPK" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LPK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LPK" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="messageBox" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="dependencies" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,18 +265,18 @@
       <workItem from="1512696598817" duration="1900000" />
       <workItem from="1512698506199" duration="6529000" />
       <workItem from="1512716595631" duration="596000" />
-      <workItem from="1512779372530" duration="6332000" />
+      <workItem from="1512779372530" duration="7183000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16158000" />
+    <option name="totallyTimeSpent" value="17009000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="960" height="1056" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31354168" sideWeight="0.49578947" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31354168" sideWeight="0.49578947" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -600,16 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/model/dependencies/CD.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="94" lean-forward="false" selection-start-line="18" selection-start-column="94" selection-end-line="18" selection-end-column="94" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/model/dao/device.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -618,10 +591,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/model/dependencies/CD.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/model/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="55" lean-forward="false" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="55" />
+        <state relative-caret-position="360">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>

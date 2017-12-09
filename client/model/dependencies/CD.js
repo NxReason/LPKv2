@@ -10,19 +10,20 @@ class ControllerDeviceDependency {
 
   getActions(value, oldValue) {
     return this.parameters.map((p) => {
+      const response = { device: this.device, parameter: p.uuid };
       switch (p.fn) {
         case fnTypes.DIFF:
-          let diff = p.value;
-          if (!value) {
-            diff = -diff;
-          }
-          return { device: this.device, parameter: p.uuid, type: deviceMethods.CHANGE, value: diff };
+          response.type = deviceMethods.CHANGE;
+          response.value = value ? p.value : -p.value;
           break;
         case fnTypes.LINEAR:
+          response.type = deviceMethods.CHANGE;
+          response.value = value - oldValue;
           break;
         default:
           throw new Error(`[Error] Invalid function type ${p.fn} in Controller-Device (${this.controller}-${this.device}) dependency`)
       }
+      return response;
     });
   }
 }
