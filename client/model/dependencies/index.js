@@ -26,16 +26,26 @@ class DependenciesManager {
     });
   }
 
-  getActionsCD({ uuid, value, oldValue }) {
+  getResponseCD({ uuid, value, oldValue }) {
     return this.cd.reduce((actions, dep) => {
       if (dep.controller === uuid) { actions = actions.concat(dep.getActions(value, oldValue)); }
       return actions;
     }, []);
   }
 
-  getActionsDD({ deviceId, paramId, oldValue, newValue }) {}
+  getResponseDD({ deviceId, paramId, oldValue, newValue }) {}
 
-  getActionsDS() {}
+  getResponseDS({ device, parameter: { uuid, value } }) {
+    // console.log(data);
+    // return this.ds.map(dep => {
+    //   if (dep.device === device && dep.parameter === parameter.uuid) {
+    //
+    //   }
+    // });
+    return this.ds
+      .filter(dep => dep.device === device && dep.parameter === uuid)
+      .map(dep => dep.createResponse(value));
+  }
 }
 
 export default DependenciesManager;

@@ -28,7 +28,7 @@ class TextSensor extends Component {
 
   setValue(value) {
     this.value = value;
-    this.refs.value.innerHTML = value;
+    this.refs.value.innerHTML = value.toFixed(2);
   }
 
   setExt(ext) {

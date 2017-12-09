@@ -32,6 +32,14 @@ const ModelView = {
       this.connections.forEach(conn => createConnection(conn));
     }
   },
+
+  updateSensors(data) {
+    if (data.length === 0) { return; }
+
+    console.log(data);
+    console.log(this.sensors);
+    data.forEach(({ sensor, value }) => this.sensors.find(s => s.uuid === sensor).setValue(value));
+  }
 };
 
 export default ModelView;

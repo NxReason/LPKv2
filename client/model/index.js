@@ -13,16 +13,19 @@ const Model = {
     return this.dao.devices[uuid];
   },
 
-  handleControllerChange(data) {
-    const actionsCD = this.dependencies.getActionsCD(data);
-    console.log(actionsCD);
-    actionsCD.forEach(({ device, type, parameter, value }) => {
+  handleControllerChange(ctrData) {
+    const depsResponse = this.dependencies.getResponseCD(ctrData);
+    depsResponse.forEach(({ device, type, parameter, value }) => {
       this.dao.devices[device][type](parameter, value);
     });
   },
 
-  handleParameterChange(data) {
-    // TODO
+  getSensorsUpdate(newParamData) {
+    return this.dependencies.getResponseDS(newParamData);
+  },
+
+  handleDeviceInterrelations(newParamData) {
+    // TODO deps with other devices
   }
 };
 

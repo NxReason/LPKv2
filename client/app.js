@@ -45,8 +45,9 @@ async function initApp() {
    */
   EventEmitter.on(Events.MODEL_PARAMETER_CHANGED, (payload) => {
     MessageBox.updateDevice(payload);
-    // TODO check dependencies with other devices
-    // TODO check dependencies with sensors
+    const sensorsUpdate = Model.getSensorsUpdate(payload);
+    View.updateSensors(sensorsUpdate);
+    Model.handleDeviceInterrelations(payload);
   });
 }
 

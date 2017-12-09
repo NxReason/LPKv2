@@ -34,7 +34,7 @@ const stubModels = [
         parameters: [
           { uuid: '0', name: 'prm21 with another long name and big value', value: 125125345.325, type: 'public' },
           { uuid: '1', name: 'prm22', value: 64.34, type: 'public' },
-          { uuid: '2', name: 'prm23', value: 546.563, type: 'public' },
+          { uuid: '2', name: 'prm23', value: 25, type: 'public' },
           { uuid: '3', name: 'prm24', value: 83.35, type: 'public' },
           { uuid: '4', name: 'prm25', value: 356.53, type: 'public' },
           { uuid: '5', name: 'priv21', value: 345.435, type: 'private' },
@@ -69,19 +69,19 @@ const stubModels = [
 
     // зависимости (для обмена информацией)
     dependencies: [
-      // {
-      //   type: 'DS',
-      //   device: 0,
-      //   parameter: 2,
-      //   sensor: 0
-      // },
-      //
-      // {
-      //   type: 'DS',
-      //   device: 1,
-      //   parameter: 0,
-      //   sensor: 1
-      // },
+      {
+        type: 'DS',
+        device: 'device0',
+        parameter: '0',
+        sensor: 'sensor0',
+      },
+
+      {
+        type: 'DS',
+        device: 'device1',
+        parameter: '1',
+        sensor: 'sensor1',
+      },
 
       {
         type: 'CD',
@@ -123,7 +123,7 @@ const stubModels = [
         type: 'TEXT',
 
         props: {
-          value: 151515,
+          value: 42.15,
           ext: 'cstm'
         }
       },
@@ -136,7 +136,7 @@ const stubModels = [
         type: 'TEXT',
 
         props: {
-          value: 42,
+          value: 25,
           ext: '&#8451'
         }
       }
