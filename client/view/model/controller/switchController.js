@@ -1,5 +1,5 @@
 import Component from 'view/model/component';
-import EventEmitter from 'helpers/eventEmitter';
+import EventEmitter, { Events } from 'helpers/eventEmitter';
 import { getPositionString } from 'helpers';
 
 const template = (name) => `
@@ -38,7 +38,7 @@ class SwitchController extends Component {
     this.refs.switch.addEventListener('click', () => {
       const value = this.refs.switch.checked;
       this.value = value;
-      EventEmitter.emit('CONTROLLER_VALUE_CHANGED', { uuid: this.uuid, value, oldValue: !value });
+      EventEmitter.emit(Events.CONTROLLER_VALUE_CHANGED, { uuid: this.uuid, value, oldValue: !value });
     })
   }
 }

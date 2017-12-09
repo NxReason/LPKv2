@@ -1,3 +1,5 @@
+import EventEmitter, { Events } from 'helpers/eventEmitter';
+
 class Device {
   constructor({ uuid, name, state, parameters }) {
     this.uuid = uuid;
@@ -9,8 +11,6 @@ class Device {
       if (p.type === 'public') { this.publicParameters.push(map[p.uuid]); }
       return map;
     }, {});
-
-    console.log(this);
   }
 
   getPublicInfo() {
@@ -23,11 +23,17 @@ class Device {
   }
 
   setParam(p, val) {
-
+    const { uuid, name, value } = this.parameters[p];
+    EventEmitter.emit(Events.MODEL_PARAMETER_CHANGED, {
+      device: this.uuid,
+      parameter: { uuid, name, value }
+    });
+    this.parameters[uuid].value = val;
   }
 
-  changeParam(p, val) {
-    this.parameters[p].value += val;
+  changeParam(p, diff) {
+    const newValue = this.parameters[p].value += diff;
+    this.setParam(p, newValue);
   }
 }
 

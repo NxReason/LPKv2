@@ -1,5 +1,5 @@
 import Component from 'view/model/component';
-import EventEmitter from 'helpers/eventEmitter';
+import EventEmitter, { Events } from 'helpers/eventEmitter';
 import { getStyleString, getSizeString } from 'helpers';
 
 const template = (size, img) => `
@@ -17,7 +17,7 @@ class Device extends Component {
 
   setListeners() {
     this.wrapper.addEventListener('click', () => {
-      EventEmitter.emit('DEVICE_COMPONENT_CLICKED', { uuid: this.uuid });
+      EventEmitter.emit(Events.DEVICE_COMPONENT_CLICKED, { uuid: this.uuid });
     })
   }
 }

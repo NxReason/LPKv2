@@ -4,7 +4,7 @@
 
 import './style.scss';
 
-import EventEmitter from 'helpers/eventEmitter';
+import EventEmitter, { Events } from 'helpers/eventEmitter';
 import Header from './view/header';
 import MessageBox from './view/messageBox';
 import View from './view/model';
@@ -13,10 +13,17 @@ import Model from './model';
 /**
  * Provides app initialization logic
  */
-function initApp() {
-  Header.init();
+async function initApp() {
+  try {
+    await Header.init();
+  }
+  catch (e) {
+    console.error('Не удалось получить данные о доступных моделях');
+    console.error(e);
+  }
 
-  EventEmitter.on('MODEL_LOADED', (data) => {
+
+  EventEmitter.on(Events.MODEL_LOADED, (data) => {
     View.init(data).render();
     Model.init(data);
   });
@@ -24,11 +31,11 @@ function initApp() {
   /**
    * User action listeners
    */
-  EventEmitter.on('CONTROLLER_VALUE_CHANGED', (payload) => {
+  EventEmitter.on(Events.CONTROLLER_VALUE_CHANGED, (payload) => {
     Model.handleControllerChange(payload);
   });
 
-  EventEmitter.on('DEVICE_COMPONENT_CLICKED', ({ uuid }) => {
+  EventEmitter.on(Events.DEVICE_COMPONENT_CLICKED, ({ uuid }) => {
     const info = Model.getDeviceById(uuid).getPublicInfo();
     MessageBox.showDevice(info);
   });
@@ -36,8 +43,10 @@ function initApp() {
   /**
    * Model events listeners
    */
-  EventEmitter.on('MODEL_PAREMETER_CHANGED', (payload) => {
+  EventEmitter.on(Events.MODEL_PARAMETER_CHANGED, (payload) => {
     MessageBox.updateDevice(payload);
+    // TODO check dependencies with other devices
+    // TODO check dependencies with sensors
   });
 }
 

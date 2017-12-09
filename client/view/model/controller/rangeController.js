@@ -1,5 +1,5 @@
 import Component from 'view/model/component';
-import EventEmitter from 'helpers/eventEmitter';
+import EventEmitter, { Events } from 'helpers/eventEmitter';
 import { getPositionString } from 'helpers';
 
 const template = (name, min, max) => `
@@ -45,7 +45,7 @@ class RangeController extends Component {
       const oldValue = this.value;
       this.value = value;
       this.refs.current.textContent = value;
-      EventEmitter.emit('CONTROLLER_VALUE_CHANGED', { uuid: this.uuid, value, oldValue });
+      EventEmitter.emit(Events.CONTROLLER_VALUE_CHANGED, { uuid: this.uuid, value, oldValue });
     });
 
     this.refs.range.addEventListener('input', () => {

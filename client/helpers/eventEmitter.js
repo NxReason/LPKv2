@@ -26,4 +26,17 @@ const EventEmitter = (function EventEmitter() {
   };
 }());
 
+const Events = {
+  // External events (i.e. server responses)
+  MODEL_LOADED: 'model_loaded',
+
+  // User actions
+  CONTROLLER_VALUE_CHANGED: 'controller_value_changed',
+  DEVICE_COMPONENT_CLICKED: 'device_component_clicked',
+
+  // Model events
+  MODEL_PARAMETER_CHANGED: 'model_parameter_changed',
+};
+
 export default EventEmitter;
+export { Events };
