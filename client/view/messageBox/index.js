@@ -66,11 +66,12 @@ const MessageBox = {
 
   updateDevice({ device, parameter: { uuid, name, value } }) {
     // Ничего не делать, если устройство не показано в данный момент
-    if (this.hidden || (this.currentDevice !== device)) {
-      return;
-    }
+    if (this.hidden || (this.currentDevice !== device)) { return; }
 
     const $li = $boxInfo.querySelector(`li[data-uuid='${uuid}']`);
+
+    if (!$li) { return; }
+
     $li.innerHTML = propFormat(name, value);
   },
 };

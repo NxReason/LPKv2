@@ -33,15 +33,13 @@ class DependenciesManager {
     }, []);
   }
 
-  getResponseDD({ deviceId, paramId, oldValue, newValue }) {}
+  getResponseDD({ device, parameter: { uuid, value, oldValue } }) {
+    return this.dd
+      .filter(dep => dep.isMatch(device, uuid))
+      .map(dep => dep.createResponse(value, oldValue));
+  }
 
   getResponseDS({ device, parameter: { uuid, value } }) {
-    // console.log(data);
-    // return this.ds.map(dep => {
-    //   if (dep.device === device && dep.parameter === parameter.uuid) {
-    //
-    //   }
-    // });
     return this.ds
       .filter(dep => dep.device === device && dep.parameter === uuid)
       .map(dep => dep.createResponse(value));

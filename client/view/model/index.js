@@ -35,9 +35,6 @@ const ModelView = {
 
   updateSensors(data) {
     if (data.length === 0) { return; }
-
-    console.log(data);
-    console.log(this.sensors);
     data.forEach(({ sensor, value }) => this.sensors.find(s => s.uuid === sensor).setValue(value));
   }
 };

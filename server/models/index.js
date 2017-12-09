@@ -33,8 +33,8 @@ const stubModels = [
         uuid: 'device1',
         parameters: [
           { uuid: '0', name: 'prm21 with another long name and big value', value: 125125345.325, type: 'public' },
-          { uuid: '1', name: 'prm22', value: 64.34, type: 'public' },
-          { uuid: '2', name: 'prm23', value: 25, type: 'public' },
+          { uuid: '1', name: 'prm22', value: 25, type: 'public' },
+          { uuid: '2', name: 'prm23', value: 64.34, type: 'public' },
           { uuid: '3', name: 'prm24', value: 83.35, type: 'public' },
           { uuid: '4', name: 'prm25', value: 356.53, type: 'public' },
           { uuid: '5', name: 'priv21', value: 345.435, type: 'private' },
@@ -70,6 +70,7 @@ const stubModels = [
     // зависимости (для обмена информацией)
     dependencies: [
       {
+        // устройство - датчик
         type: 'DS',
         device: 'device0',
         parameter: '0',
@@ -83,6 +84,7 @@ const stubModels = [
         sensor: 'sensor1',
       },
 
+      // контроллер - устройство
       {
         type: 'CD',
         controller: 'ctr0',
@@ -104,7 +106,55 @@ const stubModels = [
             { uuid: '1', fn: 'LINEAR' }
           ]
         }
-      }
+      },
+
+      // устройство - устройство
+      {
+        type: 'DD',
+        source: {
+          uuid: 'device0',
+          parameter: '0'
+        },
+        target: {
+          uuid: 'device1',
+          parameter: '5'
+        },
+        fn: {
+          type: 'LINEAR'
+        }
+      },
+
+      {
+        type: 'DD',
+        source: {
+          uuid: 'device0',
+          parameter: '1'
+        },
+        target: {
+          uuid: 'device2',
+          parameter: '1'
+        },
+        fn: {
+          type: 'MATH_POW',
+          anchor: 12.345,
+          power: 2,
+        }
+      },
+
+      {
+        type: 'DD',
+        source: {
+          uuid: 'device0',
+          parameter: '0'
+        },
+        target: {
+          uuid: 'device1',
+          parameter: '4'
+        },
+        fn: {
+          type: 'LINEAR'
+        }
+      },
     ],
 
     // события

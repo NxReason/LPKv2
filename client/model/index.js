@@ -25,7 +25,10 @@ const Model = {
   },
 
   handleDeviceInterrelations(newParamData) {
-    // TODO deps with other devices
+    const depsResponse = this.dependencies.getResponseDD(newParamData);
+    depsResponse.forEach(({ device, type, parameter, value }) => {
+      this.dao.devices[device][type](parameter, value);
+    });
   }
 };
 

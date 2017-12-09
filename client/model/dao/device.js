@@ -22,17 +22,17 @@ class Device {
     }
   }
 
-  setParam(p, val) {
-    const { uuid, name, value } = this.parameters[p];
+  setParam(p, value) {
+    const { uuid, name, value: oldValue } = this.parameters[p];
+    this.parameters[uuid].value = value;
     EventEmitter.emit(Events.MODEL_PARAMETER_CHANGED, {
       device: this.uuid,
-      parameter: { uuid, name, value }
+      parameter: { uuid, name, value, oldValue }
     });
-    this.parameters[uuid].value = val;
   }
 
   changeParam(p, diff) {
-    const newValue = this.parameters[p].value += diff;
+    const newValue = this.parameters[p].value + diff;
     this.setParam(p, newValue);
   }
 }
