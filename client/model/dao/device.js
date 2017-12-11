@@ -4,8 +4,8 @@ class Device {
   constructor({ uuid, name, state, states, parameters }) {
     this.uuid = uuid;
     this.name = name;
-    this.state = state;
     this.states = states;
+    this.activeStates = []; // todo: implement method for evaluating states
     this.publicParameters = [];
     this.parameters = parameters.reduce((map, p) => {
       map[p.uuid] = p;
@@ -15,11 +15,12 @@ class Device {
   }
 
   getPublicInfo() {
-    const state = this.states.find(s => s.uuid === this.state).desc;
+    const states = this.activeStates
+      .map(as => this.states[as].desc);
     return {
       uuid: this.uuid,
       name: this.name,
-      state,
+      states: ['msg1', 'msg2'],
       parameters: this.publicParameters
     }
   }

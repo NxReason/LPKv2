@@ -24,12 +24,11 @@ const stubModels = [
           { uuid: '4', name: 'priv12', value: 3456.5, type: 'private' },
           { uuid: '7', name: 'priv17', value: true, type: 'private' }
         ],
-        state: 'state11',
         states: [
           // 1st state
           {
             uuid: 'state11',
-            desc: 'default state of first device',
+            desc: '1st state of 1st device',
             conditions: [
               { parameter: '0', cond: 'gte', value: 10 },
               { parameter: '1', cond: 'lt', value: 20 },
@@ -38,7 +37,7 @@ const stubModels = [
           // 2nd state
           {
             uuid: 'state12',
-            desc: 'non-regular but working state of first device',
+            desc: '2nd state of 1st device',
             conditions: [
               { parameter: '1', cond: 'gt', value: 20 },
               { parameter: '2', cond: 'gt', value: 3000 },
@@ -47,10 +46,19 @@ const stubModels = [
           // 3rd state
           {
             uuid: 'state13',
-            desc: 'invalid state of first device',
+            desc: '3rd state of 1st device',
             conditions: [
               { parameter: '0', cond: 'gte', value: 80 },
               { parameter: '5', cond: 'eq', value: false }
+            ]
+          },
+          // 4th state
+          {
+            uuid: 'state14',
+            msg: '4th state of 1st device',
+            conditions: [
+              { state: 'state11', value: true },
+              { parameter: '0', cond: 'gt', value: 70 }
             ]
           }
         ]
@@ -72,13 +80,7 @@ const stubModels = [
           { uuid: '5', name: 'priv21', value: 345.435, type: 'private' },
           { uuid: '6', name: 'priv22', value: 25.5, type: 'private' }
         ],
-        state: 'state21',
-        states: [
-          {
-            uuid: 'state21',
-            desc: '2nd device default state'
-          }
-        ]
+        states: []
       },
 
       {
@@ -97,13 +99,7 @@ const stubModels = [
           { uuid: '4', name: 'priv32', value: 456.534, type: 'private' },
           { uuid: '6', name: 'priv36', value: false, type: 'private' }
         ],
-        state: 'state31',
-        states: [
-          {
-            uuid: 'state31',
-            desc: '3rd device default state'
-          }
-        ]
+        states: []
       }
     ],
 

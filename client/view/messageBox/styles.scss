@@ -36,6 +36,9 @@
 	&-text {
 		display: flex;
 		align-items: center;
+		padding: 4px 0;
+		font-weight: bold;
+		font-size: .95rem;
 	}
 
 	&-subheader {
@@ -45,13 +48,13 @@
 	}
 
 	&-props {
-		margin-bottom: 10px;
+		margin-bottom: 8px;
 		list-style-position: inside;
-
+		border-bottom: 1px solid #666;
+		padding-bottom: 8px;
 	}
 
 	&-state {
-		border-top: 1px solid #666;
-		padding-top: 8px;
+		list-style-position: inside;
 	}
 }

@@ -7,7 +7,7 @@ function msgHtml(msg, level) {
   `;
 }
 
-function propFormat(name, value) {
+function formatProp(name, value) {
   let valueStr = 'Неизвестно';
   if (typeof value === 'number') {
     valueStr = value.toFixed(2);
@@ -17,8 +17,16 @@ function propFormat(name, value) {
   return `${name}: <b>${valueStr}</b>`;
 }
 
-function deviceHtml(name, props, state) {
-  const propsList = Object.values(props).map(p => `<li data-uuid="${p.uuid}">${propFormat(p.name, p.value)}</li>`).join('');
+function formatStates(states) {
+  if (!states || states.length === 0) {
+    return;
+  }
+
+  return states.map(s => `<li>${s}</li>`).join('');
+}
+
+function deviceHtml(name, props, states) {
+  const propsList = Object.values(props).map(p => `<li data-uuid="${p.uuid}">${formatProp(p.name, p.value)}</li>`).join('');
   return `
     <h2 class="message-box-subheader">${name}</h2>
 
@@ -27,7 +35,8 @@ function deviceHtml(name, props, state) {
       ${propsList}
     </ul>
 
-    <p class="message-box-state">${state}</p>
+    <p class="message-box-text">Активные состояния устройства:</p>
+    <ul class="message-box-state">${formatStates(states)}</ul>
   `;
 }
 
@@ -64,10 +73,10 @@ const MessageBox = {
     this._plainMessage(msg, 'info');
   },
 
-  showDevice({ uuid, name, parameters, state }) {
+  showDevice({ uuid, name, parameters, states }) {
     MessageBox.show();
     this.currentDevice = uuid;
-    $boxInfo.innerHTML = deviceHtml(name, parameters, state);
+    $boxInfo.innerHTML = deviceHtml(name, parameters, states);
   },
 
   updateDevice({ device, parameter: { uuid, name, value } }) {
@@ -78,7 +87,7 @@ const MessageBox = {
 
     if (!$li) { return; }
 
-    $li.innerHTML = propFormat(name, value);
+    $li.innerHTML = formatProp(name, value);
   },
 };
 
