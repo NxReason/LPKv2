@@ -19,7 +19,7 @@ function formatProp(name, value) {
 
 function formatStates(states) {
   if (!states || states.length === 0) {
-    return;
+    return '-';
   }
 
   return states.map(s => `<li>${s}</li>`).join('');

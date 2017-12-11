@@ -30,8 +30,8 @@ const stubModels = [
             uuid: 'state11',
             desc: '1st state of 1st device',
             conditions: [
-              { parameter: '0', cond: 'gte', value: 10 },
-              { parameter: '1', cond: 'lt', value: 20 },
+              { parameter: '0', rel: 'gte', value: 10 },
+              { parameter: '1', rel: 'lt', value: 20 },
             ]
           },
           // 2nd state
@@ -39,8 +39,8 @@ const stubModels = [
             uuid: 'state12',
             desc: '2nd state of 1st device',
             conditions: [
-              { parameter: '1', cond: 'gt', value: 20 },
-              { parameter: '2', cond: 'gt', value: 3000 },
+              { parameter: '1', rel: 'gt', value: 20 },
+              { parameter: '2', rel: 'gt', value: 3000 },
             ]
           },
           // 3rd state
@@ -48,17 +48,17 @@ const stubModels = [
             uuid: 'state13',
             desc: '3rd state of 1st device',
             conditions: [
-              { parameter: '0', cond: 'gte', value: 80 },
-              { parameter: '5', cond: 'eq', value: false }
+              { parameter: '0', rel: 'gte', value: 80 },
+              { parameter: '5', rel: 'eq', value: false }
             ]
           },
           // 4th state
           {
             uuid: 'state14',
-            msg: '4th state of 1st device',
+            desc: '4th state of 1st device',
             conditions: [
               { state: 'state11', value: true },
-              { parameter: '0', cond: 'gt', value: 70 }
+              { parameter: '0', rel: 'gt', value: 70 }
             ]
           }
         ]

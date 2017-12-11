@@ -1,4 +1,4 @@
-const ConditionTypes = {
+const RelationTypes = {
   GTE: 'gte',
   GT: 'gt',
   EQ: 'eq',
@@ -6,5 +6,5 @@ const ConditionTypes = {
   LT: 'lt'
 };
 
-export default ConditionTypes;
+export default RelationTypes;
 
