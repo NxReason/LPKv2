@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca7a8485-fe4d-4cb2-a37e-cb5b298e92a6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LPK.iml" afterPath="$PROJECT_DIR$/.idea/LPK.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/view/messageBox/index.js" afterPath="$PROJECT_DIR$/client/view/messageBox/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/index.js" afterPath="$PROJECT_DIR$/server/models/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -46,8 +41,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/models/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+            <state relative-caret-position="378">
+              <caret line="42" column="36" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -93,6 +88,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/view/messageBox/index.js" />
         <option value="$PROJECT_DIR$/server/models/index.js" />
+        <option value="$PROJECT_DIR$/client/config/conditionTypes.js" />
       </list>
     </option>
   </component>
@@ -176,13 +172,13 @@
             <path>
               <item name="LPK" type="b2602c69:ProjectViewProjectNode" />
               <item name="LPK" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LPK" type="b2602c69:ProjectViewProjectNode" />
               <item name="LPK" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -297,7 +293,7 @@
       <workItem from="1512716595631" duration="596000" />
       <workItem from="1512779372530" duration="18340000" />
       <workItem from="1512976600972" duration="1083000" />
-      <workItem from="1512977700165" duration="846000" />
+      <workItem from="1512977700165" duration="1522000" />
     </task>
     <servers />
   </component>
@@ -307,7 +303,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30095000" />
+    <option name="totallyTimeSpent" value="30771000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="960" height="1056" extended-state="4" />
@@ -343,13 +339,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/model/dao/device.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/view/model/controller/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -616,10 +605,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/config/conditionTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        <state relative-caret-position="378">
+          <caret line="42" column="36" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="36" />
           <folding />
         </state>
       </provider>
