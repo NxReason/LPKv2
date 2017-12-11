@@ -8,7 +8,13 @@ function msgHtml(msg, level) {
 }
 
 function propFormat(name, value) {
-  return `${name}: <b>${value.toFixed(2)}</b>`;
+  let valueStr = 'Неизвестно';
+  if (typeof value === 'number') {
+    valueStr = value.toFixed(2);
+  } else if (typeof value === 'boolean') {
+    valueStr = value ? 'ON' : 'OFF';
+  }
+  return `${name}: <b>${valueStr}</b>`;
 }
 
 function deviceHtml(name, props, state) {

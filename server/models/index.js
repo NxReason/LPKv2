@@ -18,10 +18,27 @@ const stubModels = [
           { uuid: '0', name: 'prm11', value: 42.15, type: 'public' },
           { uuid: '1', name: 'prm12', value: 12.345, type: 'public' },
           { uuid: '2', name: 'prm13', value: 3546.35, type: 'public' },
+          { uuid: '5', name: 'prm15', value: false, type: 'public' },
+          { uuid: '6', name: 'prm16', value: true, type: 'public' },
           { uuid: '3', name: 'priv11', value: 125.15, type: 'private' },
-          { uuid: '4', name: 'priv12', value: 3456.5, type: 'private' }
+          { uuid: '4', name: 'priv12', value: 3456.5, type: 'private' },
+          { uuid: '7', name: 'priv17', value: true, type: 'private' }
         ],
-        state: 'regular state'
+        state: 'state11',
+        states: [
+          // 1st state
+          {
+            uuid: 'state11',
+            name: 'normal state of first device',
+            conditions: [
+              { parameter: '0', cond: 'gte', value: 10 },
+              { parameter: '1', cond: 'lt', value: 20 },
+            ]
+          },
+          // 2nd state
+          {}
+          // 3rd state
+        ]
       },
 
       {
@@ -54,8 +71,10 @@ const stubModels = [
           { uuid: '0', name: 'prm31', value: 345.15, type: 'public' },
           { uuid: '1', name: 'prm32', value: 345.356, type: 'public' },
           { uuid: '2', name: 'prm33', value: 3145.35, type: 'public' },
+          { uuid: '5', name: 'prm35', value: true, type: 'public' },
           { uuid: '3', name: 'priv31', value: 324.5, type: 'private' },
-          { uuid: '4', name: 'priv32', value: 456.534, type: 'private' }
+          { uuid: '4', name: 'priv32', value: 456.534, type: 'private' },
+          { uuid: '6', name: 'priv36', value: false, type: 'private' }
         ],
         state: 'regular state'
       }
