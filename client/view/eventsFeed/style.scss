@@ -1,0 +1,55 @@
+.events-feed {
+  width: 20%;
+  min-width: 150px;
+
+  height: $working-area-height;
+  min-height: 500px;
+
+  margin-left: 10px;
+  border: 1px solid #888;
+  overflow-y: scroll;
+
+  &__header {
+    margin: 5px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #888;
+  }
+
+  &__events {
+    list-style: none;
+  }
+
+  .event-desc {
+    border-bottom: 1px solid #888;
+    padding-bottom: 7px;
+    margin: 7px;
+
+    animation-name: event-desc-slidein;
+    animation-duration: .5s;
+
+    &__time {
+      padding: 5px 0 5px 0;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .icon {
+      width: 25px;
+      height: 25px;
+      float: left;
+      margin: 0 5px 0 0;
+    }
+  }
+}
+
+@keyframes event-desc-slidein {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

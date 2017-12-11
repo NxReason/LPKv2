@@ -53,15 +53,15 @@ const MessageBox = {
   _plainMessage(msg, className) {
     this.currentDevice = null;
     MessageBox.show();
-    $box.innerHTMl = msgHtml(msg, className);
+    $boxInfo.innerHTML = msgHtml(msg, className);
   },
 
   warn(msg) {
-    _plainMessage(msg, 'warn');
+    this._plainMessage(msg, 'warn');
   },
 
   info(msg) {
-    _plainMessage(msg, 'info');
+    this._plainMessage(msg, 'info');
   },
 
   showDevice({ uuid, name, parameters, state }) {

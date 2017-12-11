@@ -4,7 +4,7 @@ import EventsManager from './events';
 
 const Model = {
   init({ devices, dependencies, events }) {
-    this.dao = new DAO({ devices });
+    this.dao = new DAO(devices);
     this.events = new EventsManager(events);
     this.dependencies = new DependenciesManager(dependencies);
   },

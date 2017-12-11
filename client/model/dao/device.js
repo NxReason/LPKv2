@@ -1,10 +1,11 @@
 import EventEmitter, { Events } from 'helpers/eventEmitter';
 
 class Device {
-  constructor({ uuid, name, state, parameters }) {
+  constructor({ uuid, name, state, states, parameters }) {
     this.uuid = uuid;
     this.name = name;
     this.state = state;
+    this.states = states;
     this.publicParameters = [];
     this.parameters = parameters.reduce((map, p) => {
       map[p.uuid] = p;
@@ -14,10 +15,11 @@ class Device {
   }
 
   getPublicInfo() {
+    const state = this.states.find(s => s.uuid === this.state).desc;
     return {
       uuid: this.uuid,
       name: this.name,
-      state: this.state,
+      state,
       parameters: this.publicParameters
     }
   }

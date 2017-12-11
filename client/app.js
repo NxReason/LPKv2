@@ -2,29 +2,24 @@
  * Application entry point
  */
 
-import './style.scss';
+import './view/style.scss';
 
 import EventEmitter, { Events } from 'helpers/eventEmitter';
-import Header from './view/header';
-import MessageBox from './view/messageBox';
-import View from './view/model';
+import View from './view';
 import Model from './model';
 
-/**
- * Provides app initialization logic
- */
 async function initApp() {
   try {
-    await Header.init();
+    await View.Header.init();
   }
   catch (e) {
     console.error('Не удалось получить данные о доступных моделях');
     console.error(e);
   }
 
-
   EventEmitter.on(Events.MODEL_LOADED, (data) => {
-    View.init(data).render();
+    View.clear();
+    View.Scheme.init(data).render();
     Model.init(data);
   });
 
@@ -37,21 +32,18 @@ async function initApp() {
 
   EventEmitter.on(Events.DEVICE_COMPONENT_CLICKED, ({ uuid }) => {
     const info = Model.getDeviceById(uuid).getPublicInfo();
-    MessageBox.showDevice(info);
+    View.MessageBox.showDevice(info);
   });
 
   /**
-   * Model events listeners
+   * Scheme events listeners
    */
   EventEmitter.on(Events.MODEL_PARAMETER_CHANGED, (payload) => {
-    MessageBox.updateDevice(payload);
+    View.MessageBox.updateDevice(payload);
     const sensorsUpdate = Model.getSensorsUpdate(payload);
-    View.updateSensors(sensorsUpdate);
+    View.Scheme.updateSensors(sensorsUpdate);
     Model.handleDeviceInterrelations(payload);
   });
 }
 
-/**
- * Initialize application on window load
- */
 window.addEventListener('load', initApp);

@@ -1,4 +1,4 @@
-import Component from 'view/model/component';
+import Component from 'view/scheme/component';
 import EventEmitter, { Events } from 'helpers/eventEmitter';
 import { getPositionString } from 'helpers';
 

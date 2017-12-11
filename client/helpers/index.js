@@ -23,3 +23,8 @@ export function getSizeString(size) {
 export function getStyleString({ position, size }) {
   return `${getPositionString(position)} ${getSizeString(size)}`;
 }
+
+export function getCurrentTimeString() {
+  const d = new Date();
+  return `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
+}

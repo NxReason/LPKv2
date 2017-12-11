@@ -3,9 +3,9 @@ import SensorFactory from './sensor';
 import ControllerFactory from './controller';
 import createConnection from './connector';
 
-const $area = document.getElementById('workarea');
+const $area = document.getElementById('scheme');
 
-const ModelView = {
+const Scheme = {
   init({ devices, sensors, connections, controllers }) {
     this.devices = devices
       ? devices.map(d => new Device($area, d))
@@ -36,7 +36,11 @@ const ModelView = {
   updateSensors(data) {
     if (data.length === 0) { return; }
     data.forEach(({ sensor, value }) => this.sensors.find(s => s.uuid === sensor).setValue(value));
+  },
+
+  clear() {
+    $area.innerHTML = '';
   }
 };
 
-export default ModelView;
+export default Scheme;

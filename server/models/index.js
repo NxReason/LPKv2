@@ -259,7 +259,7 @@ const stubModels = [
     ]
   },
 
-  { name: 'model2', uuid: 1 }
+  { name: 'model2', uuid: 'model1' }
 ];
 
 function getAll() {
@@ -267,8 +267,7 @@ function getAll() {
 }
 
 function getById(id) {
-  const model = stubModels.find(m => m.uuid === id);
-  return model;
+  return stubModels.find(m => m.uuid === id);
 }
 
 module.exports = {

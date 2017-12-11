@@ -20,7 +20,14 @@ const template = `
   </header>
 
   <main class="content">
-    <div id="workarea" class="workarea"></div>
+    <div class="working-area">
+      <div id="scheme" class="scheme"></div>
+      <div class="events-feed">
+        <h3 class="events-feed__header">Список событий</h3>
+        <ul id="events-feed" class="events-feed__events"></ul>
+      </div>
+    </div>
+    
     <div id="message-box" class="message-box">
       <div class="message-box__header">
         <i class="icon icon-close"></i>

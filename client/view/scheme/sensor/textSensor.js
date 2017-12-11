@@ -1,5 +1,5 @@
 import { getPositionString } from 'helpers';
-import Component from 'view/model/component';
+import Component from 'view/scheme/component';
 
 const template = () => `
 <div class="sensor-text">

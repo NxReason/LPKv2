@@ -1,9 +1,9 @@
-.workarea {
+.scheme {
   background-color: #eee;
 
-  width: 100%;
-  height: 70%;
-  min-width: 800px;
+  width: 80%;
+  height: calc(100vh - 70px);
+  min-width: 600px;
   min-height: 500px;
   position: relative;
 }

@@ -34,7 +34,7 @@ const Events = {
   CONTROLLER_VALUE_CHANGED: 'controller_value_changed',
   DEVICE_COMPONENT_CLICKED: 'device_component_clicked',
 
-  // Model events
+  // Scheme events
   MODEL_PARAMETER_CHANGED: 'model_parameter_changed',
 };
 
