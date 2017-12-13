@@ -207,9 +207,9 @@ const stubModels = [
         type: 'warn',
         time: 500,
         effects: [
-          { device: 'device0', parameter: '0', set: 100 },
-          { device: 'device0', parameter: '1', diff: -50 },
-          { device: 'device1', parameter: '0', set: 42 },
+          { device: 'device0', parameter: '0', type: 'set', value: 100 },
+          { device: 'device0', parameter: '1', type: 'change', value: -50 },
+          { device: 'device1', parameter: '0', type: 'set', value: 42 },
         ]
       },
       {
@@ -218,8 +218,8 @@ const stubModels = [
         type: 'info',
         time: 1000,
         effects: [
-          { device: 'device1', parameter: '1', set: 52 },
-          { device: 'device2', parameter: '2', set: -20 },
+          { device: 'device1', parameter: '1', type: 'change', value: 52 },
+          { device: 'device2', parameter: '2', type: 'set', value: -20 },
         ]
       }
     ],

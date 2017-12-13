@@ -30,6 +30,10 @@ const Model = {
     depsResponse.forEach(({ device, type, parameter, value }) => {
       this.dao.devices[device][type](parameter, value);
     });
+  },
+
+  handleEvent(data) {
+    this.dao.handleEvent(data);
   }
 };
 

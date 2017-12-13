@@ -67,7 +67,7 @@ function prependElement(fn) {
 const EventsFeed = {
   $firstElement: null,
 
-  showEvent({ msg, type = 'info' }) {
+  showEvent({ name: msg, type = 'info' }) {
     prependElement(() => eventTemplate(msg, type));
   },
 

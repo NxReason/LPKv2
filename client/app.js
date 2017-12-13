@@ -51,7 +51,8 @@ async function initApp() {
   });
 
   EventEmitter.on(Events.EVENT_TRIGGERED, (payload) => {
-    console.log(payload);
+    View.EventsFeed.showEvent(payload);
+    Model.handleEvent(payload);
   });
 }
 

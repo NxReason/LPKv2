@@ -1,4 +1,4 @@
-import EventTypes from 'config/eventTypes';
+import DependencyTypes from 'config/dependencyTypes';
 import ControllerDeviceDependency from './CD';
 import DeviceDeviceDependency from './DD';
 import DeviceSensorDependency from './DS';
@@ -11,13 +11,13 @@ class DependenciesManager {
 
     deps.forEach(d => {
       switch (d.type) {
-        case EventTypes.CD:
+        case DependencyTypes.CD:
           this.cd.push(new ControllerDeviceDependency(d));
           break;
-        case EventTypes.DD:
+        case DependencyTypes.DD:
           this.dd.push(new DeviceDeviceDependency(d));
           break;
-        case EventTypes.DS:
+        case DependencyTypes.DS:
           this.ds.push(new DeviceSensorDependency(d));
           break;
         default:
