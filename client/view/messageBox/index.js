@@ -81,7 +81,7 @@ const MessageBox = {
 
   updateDeviceParameter({ device, parameter: { uuid, name, value } }) {
     // Ничего не делать, если устройство не показано в данный момент
-    if (this.hidden || (this.currentDevice !== device)) { return; }
+    if (!this._shouldUpdateDevice(device)) { return; }
 
     const $li = $boxInfo.querySelector(`li[data-uuid='${uuid}']`);
 
@@ -90,9 +90,15 @@ const MessageBox = {
     $li.innerHTML = formatProp(name, value);
   },
 
-  updateDeviceStates(data) {
-    console.log(data);
+  updateDeviceStates({ device, states, statesDiff }) {
+    if(!this._shouldUpdateDevice(device)) { return; }
+    const $boxState = $box.querySelector('.message-box-state');
+    $boxState.innerHTML = formatStates(states.map(s => s.desc));
   },
+
+  _shouldUpdateDevice(device) {
+    return (!this.hidden && this.currentDevice === device);
+  }
 };
 
 const $close = $box.querySelector('.icon-close');
