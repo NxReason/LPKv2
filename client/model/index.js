@@ -6,6 +6,7 @@ const Model = {
   init({ devices, dependencies, events }) {
     this.dao = new DAO(devices);
     this.events = new EventsManager(events);
+    this.events.start();
     this.dependencies = new DependenciesManager(dependencies);
   },
 

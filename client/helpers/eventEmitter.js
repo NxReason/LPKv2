@@ -36,7 +36,8 @@ const Events = {
 
   // Scheme events
   MODEL_PARAMETER_CHANGED: 'model_parameter_changed',
-  DEVICE_ACTIVE_STATES_CHANGED: 'device_active_states_changed'
+  DEVICE_ACTIVE_STATES_CHANGED: 'device_active_states_changed',
+  EVENT_TRIGGERED: 'event_triggered',
 };
 
 export default EventEmitter;

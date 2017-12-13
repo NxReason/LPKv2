@@ -49,6 +49,10 @@ async function initApp() {
     View.MessageBox.updateDeviceStates(payload);
     View.EventsFeed.showDeviceStatesDiff(payload);
   });
+
+  EventEmitter.on(Events.EVENT_TRIGGERED, (payload) => {
+    console.log(payload);
+  });
 }
 
 window.addEventListener('load', initApp);

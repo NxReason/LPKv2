@@ -201,8 +201,27 @@ const stubModels = [
 
     // события
     events: [
-      {},
-      {}
+      {
+        uuid: 'event0',
+        name: 'First event name',
+        type: 'warn',
+        time: 500,
+        effects: [
+          { device: 'device0', parameter: '0', set: 100 },
+          { device: 'device0', parameter: '1', diff: -50 },
+          { device: 'device1', parameter: '0', set: 42 },
+        ]
+      },
+      {
+        uuid: 'event1',
+        name: 'Second event name',
+        type: 'info',
+        time: 1000,
+        effects: [
+          { device: 'device1', parameter: '1', set: 52 },
+          { device: 'device2', parameter: '2', set: -20 },
+        ]
+      }
     ],
 
     // датчики (отображение данных пользователю)
