@@ -39,10 +39,15 @@ async function initApp() {
    * Scheme events listeners
    */
   EventEmitter.on(Events.MODEL_PARAMETER_CHANGED, (payload) => {
-    View.MessageBox.updateDevice(payload);
+    View.MessageBox.updateDeviceParameter(payload);
     const sensorsUpdate = Model.getSensorsUpdate(payload);
     View.Scheme.updateSensors(sensorsUpdate);
     Model.handleDeviceInterrelations(payload);
+  });
+
+  EventEmitter.on(Events.DEVICE_ACTIVE_STATES_CHANGED, (payload) => {
+    View.MessageBox.updateDeviceStates(payload);
+    View.EventsFeed.showDeviceStatesDiff(payload);
   });
 }
 

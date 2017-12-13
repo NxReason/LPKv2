@@ -53,14 +53,14 @@ const stubModels = [
             ]
           },
           // 4th state
-          {
-            uuid: 'state14',
-            desc: '4th state of 1st device',
-            conditions: [
-              { state: 'state11', value: true },
-              { parameter: '0', rel: 'gt', value: 70 }
-            ]
-          }
+          // {
+          //   uuid: 'state14',
+          //   desc: '4th state of 1st device',
+          //   conditions: [
+          //     { state: 'state11', value: true },
+          //     { parameter: '0', rel: 'gt', value: 70 }
+          //   ]
+          // }
         ]
       },
 

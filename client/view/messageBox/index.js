@@ -79,7 +79,7 @@ const MessageBox = {
     $boxInfo.innerHTML = deviceHtml(name, parameters, states);
   },
 
-  updateDevice({ device, parameter: { uuid, name, value } }) {
+  updateDeviceParameter({ device, parameter: { uuid, name, value } }) {
     // Ничего не делать, если устройство не показано в данный момент
     if (this.hidden || (this.currentDevice !== device)) { return; }
 
@@ -88,6 +88,10 @@ const MessageBox = {
     if (!$li) { return; }
 
     $li.innerHTML = formatProp(name, value);
+  },
+
+  updateDeviceStates(data) {
+    console.log(data);
   },
 };
 
