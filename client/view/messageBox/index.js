@@ -12,7 +12,7 @@ function formatProp(name, value) {
   if (typeof value === 'number') {
     valueStr = value.toFixed(2);
   } else if (typeof value === 'boolean') {
-    valueStr = value ? 'ON' : 'OFF';
+    valueStr = value ? '+' : '-';
   }
   return `${name}: <b>${valueStr}</b>`;
 }

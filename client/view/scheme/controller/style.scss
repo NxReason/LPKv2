@@ -49,7 +49,7 @@
   height: 26px;
   width: 26px;
   right: 2px;
-  bottom: 0px;
+  bottom: 0;
   color: #fff;
   font-size: .9em;
 }
@@ -87,8 +87,10 @@ input:checked + .controller-switch__slider:after {
 
   input {
     display: inline-block;
+    width: 100px;
     cursor: pointer;
     flex: 1;
+    outline: none;
   }
 }
 .controller-range__current-value {

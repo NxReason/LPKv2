@@ -1,7 +1,8 @@
 import { getPositionString } from 'helpers';
 import Component from 'view/scheme/component';
 
-const template = () => `
+const template = (name) => `
+<p>${name}</p>
 <div class="sensor-text">
   <span class="sensor-text__value" ref="value"></span>
   <span ref="ext"></span>
@@ -9,10 +10,11 @@ const template = () => `
 `;
 
 class TextSensor extends Component {
-  constructor(parent, { uuid, position, props: { value, ext } }) {
+  constructor(parent, { uuid, name, position, props: { value, ext } }) {
     super(parent, { uuid, className: 'sensor' });
+    this.name = name;
     const style = getPositionString(position);
-    this.template = template();
+    this.template = template(name);
     this.wrapper.setAttribute('style', style);
 
     this.value = value;
