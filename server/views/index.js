@@ -1,6 +1,6 @@
 const isDev = process.env.NODE_ENV === 'development';
 
-const template = `
+const template = (level) => `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,11 @@ const template = `
 </head>
 <body>
   <header class="header">
+    <div class="nav">
+      <a href="/" class="nav-link">Обучение</a>
+      ${level >= 2 ? '<a href="/cad" class="nav-link">САПР</a>' : ''}
+      ${level >= 3 ? '<a href="/admin" class="nav-link">Админ</a>' : ''}
+    </div>
     <select id="models-list">
       <option selected disabled hidden>Загружается список моделей</option>
     </select>

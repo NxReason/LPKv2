@@ -1,7 +1,9 @@
 const core = require('./core');
-const models = require('./models');
+const scenarios = require('./scenarios');
+const middleware = require('./middleware');
 
 module.exports = {
-  ...core,
-  ...models
+  core,
+  scenarios,
+  middleware
 };

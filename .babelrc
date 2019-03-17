@@ -1,12 +1,5 @@
 {
   "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": "> 5%"
-        }
-      }
-    ]
-  ],
+    [ "@babel/preset-env", { "targets": { "browsers": "> 5%" } } ]
+  ]
 }

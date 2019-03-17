@@ -1,17 +1,44 @@
-const model1  = require('./1');
-const model2 = require('./2');
+const Sequelize = require('sequelize');
 
-const stubModels = [ model1, model2 ];
+const { db } = require('../config');
+const scenarios = require('./scenarios');
 
-function getAll() {
-  return stubModels;
-}
+const sequelize = new Sequelize(`${db.dialect}://${db.login}:${db.pass}@${db.host}:${db.port}/${db.name}`, {
+  logging: false
+});
 
-function getById(id) {
-  return stubModels.find(m => m.uuid === id);
-}
+const users = sequelize.define('user', {
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+}, {
+  timestamps: false,
+  indexes: [{ unique: true, fields: ['name'] }]
+});
+
+const roles = sequelize.define('role', {
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+}, {
+  timestamps: false
+});
+
+users.belongsTo(roles);
 
 module.exports = {
-  getAll,
-  getById
+  db: sequelize,
+  scenarios,
+  users,
+  roles
 };

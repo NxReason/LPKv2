@@ -13,3 +13,19 @@ body {
 .content {
   padding: 12px;
 }
+
+.nav {
+  padding-bottom: 10px;
+}
+.nav-link {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  margin-right: 10px;
+  padding-top: 10px;
+  color: #fff;
+  background-color: rgb(61, 157, 179);
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+}

@@ -1,16 +1,10 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const isDev = process.env.NODE_ENV === 'development';
 
-const extractSass = new ExtractTextPlugin({
+const extractStyles = new MiniCssExtractPlugin({
   filename: '../css/styles.css',
-  disable: isDev
 });
-
-const pathsToClean = ['assets/css', 'assets/js'];
-const cleanPlugin = new CleanWebpackPlugin(pathsToClean);
 
 const config = {
   entry: './client/app',
@@ -19,8 +13,6 @@ const config = {
     filename: 'app.bundle.js',
     publicPath: isDev ? 'http://localhost:8080/' : ''
   },
-
-  devtool: isDev ? 'inline-source-map' : false,
 
   module: {
     rules: [
@@ -35,16 +27,14 @@ const config = {
       {
         test: /\.scss$/,
         include: path.resolve(__dirname, 'client'),
-        use: extractSass.extract({
-          use: [
-            { loader: 'css-loader' },
-            { loader: 'sass-loader' }
-          ],
-          fallback: 'style-loader'
-        })
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
+        ]
       },
 
-      // Images (icons)
+      // // Images (icons)
       {
         test: /\.(png|jpe?g|gif|svg)$/,
         include: path.resolve(__dirname, 'client'),
@@ -74,10 +64,7 @@ const config = {
     port: 8080
   },
 
-  plugins: [
-    extractSass,
-    cleanPlugin
-  ]
+  plugins: [ extractStyles ]
 };
 
 module.exports = config;
