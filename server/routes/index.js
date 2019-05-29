@@ -17,6 +17,8 @@ router.use(c.middleware.verifyLoggedIn);
 router.get('/', c.core.index);
 router.get('/cad', c.core.cad);
 router.get('/admin', c.core.admin);
+router.get('/admin/users/new', c.core.userNew);
+router.get('/admin/users/edit/:userId', c.core.userEdit);
 
 // api
 router.get('/api/models', c.scenarios.all);

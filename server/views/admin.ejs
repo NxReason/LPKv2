@@ -1,0 +1,69 @@
+<%- include('_header') %>
+<body>
+  <%- include('_navbar') %>
+  <div class="wrapper">
+    <h5>Панель администратора</h5>
+  </div>
+
+  <div class="row admin-list">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#users">Пользователи</a></li>
+        <li class="tab col s3"><a href="#models">Модели</a></li>
+      </ul>
+    </div>
+    <div id="users" class="col s12">
+      <ul class="collection">
+        <li class="collection-item">
+          <a class="btn waves-effect waves-light" href="/admin/users/new">
+            Добавить пользователя <i class="material-icons right">person</i>
+          </a>
+        </li>
+      <% users.forEach(function(u) { %>
+        <li class="collection-item">
+          <p>
+            <strong class="info-prefix">Имя: </strong><%= u.name %> <br>
+            <strong class="info-prefix">E-mail: </strong><%= u.email %> <br>
+            <strong class="info-prefix">Роль: </strong><%= u.role.name %>
+
+            <a href="/admin/users/delete/<%= u.id %>" class="secondary-content">
+              <i class="material-icons">delete</i>
+            </a>
+            <a href="/admin/users/edit/<%= u.id %>" class="secondary-content">
+              <i class="material-icons">edit</i>
+            </a>
+          </p>
+        </li>
+      <% }) %>
+      </ul>
+    </div>
+    <div id="models" class="col s12">
+      <ul class="collection">
+      <% models.forEach(function(m) { %>
+        <li class="collection-item">
+          <div>
+            <strong class="info-prefix">Название: </strong>
+            <%= m.name %>
+
+            <a href="/admin/models/delete/<%= m.id %>" class="secondary-content">
+              <i class="material-icons">delete</i>
+            </a>
+            <a href="/cad?model=<%= m.id %>" class="secondary-content">
+              <i class="material-icons">edit</i>
+            </a>
+            <a href="/?model=<%= m.id %>" class="secondary-content">
+              <i class="material-icons">play_arrow</i>
+            </a>
+          </div>
+        </li>
+      <% }) %>
+      </ul>
+    </div>
+  </div>
+
+  <script src="libs/materialize/js/materialize.min.js"></script>
+  <script defer>
+    const instance = M.Tabs.init(document.querySelector('.tabs'));
+  </script>
+</body>
+</html>

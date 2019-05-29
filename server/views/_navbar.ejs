@@ -1,0 +1,10 @@
+<nav class="row">
+  <div class="nav-wrapper col s12">
+    <a href="/" class="brand-logo">LPK</a>
+    <ul id="nav-mobile" class="right">
+      <li><a href="/">Обучение</a></li>
+      <% if(user.roleId >= 2) { %><li><a href="/cad">САПР</a></li><% } %>
+      <% if(user.roleId >= 3) { %><li><a href="/admin">Администратор</a></li><% } %>
+    </ul>
+  </div>
+</nav>

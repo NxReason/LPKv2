@@ -1,14 +1,17 @@
+const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 
-const { port } = require('./server/config');
-const router = require('./server/routes');
-const { db } = require('./server/models');
+const { port } = require('./config');
+const router = require('./routes');
+const { db } = require('./models');
 
 const app = express();
 
 app.use(express.static('assets'));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // session
 app.use(session({

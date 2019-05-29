@@ -1,0 +1,52 @@
+<% var isDev = process.env.NODE_ENV === 'development'; %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LPKv2</title>
+
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="brand-logo">LPK</a>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="/">Обучение</a></li>
+      <% if(user.roleId >= 2) { %> <li><a class="nav-link" href="/cad">САПР</a></li> <% } %>
+      <% if(user.roleId >= 3) { %> <li><a class="nav-link" href="/admin">Администратор</a></li> <% } %>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <select id="models-list" class="select models-list">
+      <option selected disabled hidden>Загружается список моделей</option>
+    </select>
+    <button id="load-model-btn" class="btn">Загрузить</button>
+
+    <div class="working-area">
+      <div id="scheme" class="scheme"></div>
+      <div class="events-feed">
+        <h3 class="events-feed__header">Список событий</h3>
+        <ul id="events-feed" class="events-feed__events"></ul>
+      </div>
+    </div>
+    
+    <div id="message-box" class="message-box">
+      <div class="message-box__header">
+        <i class="icon icon-close"></i>
+      </div>
+      <div class="message-box__info">
+
+      </div>
+    </div>
+  </main>
+  <% if(isDev) { %>
+    <script src="http://localhost:8080/app.bundle.js"></script>
+  <% } else { %>
+    <script src="js/app.bundle.js"></script>
+  <% } %>
+</body>
+</html>

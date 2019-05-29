@@ -1,0 +1,53 @@
+<%- include('_header') %>
+<body>
+  <%- include('_navbar') %>
+  <div class="container">
+      <form method="post" class="card">
+          <div class="card-content">
+            <h3 class="form-header"><%= title %></h3>
+            <div class="input-field">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="username" name="username" type="text" class="validate" required="required" <% if(editedUser) { %> value="<%= editedUser.name %>" <% } %> >
+              <label for="username">Логин</label>
+            </div>
+    
+            <div class="input-field">
+              <i class="material-icons prefix">email</i>
+              <input id="email" name="email" type="text" class="validate" required="required" <% if(editedUser) { %> value="<%= editedUser.email %>" <% } %> >
+              <label for="email">E-mail</label>
+            </div>
+    
+            <div class="input-field">
+              <i class="material-icons prefix">lock</i>
+              <input id="password" name="password" type="password" class="validate" required="required" <% if(editedUser) { %> placeholder="Новый пароль (оставьте поле пустым для сохранения текущего пароля)" <% } %> >
+              <label for="password">Пароль</label>
+            </div>
+    
+            <div class="input-field">
+              <i class="material-icons prefix">lock_outline</i>
+              <input id="password_confirm" name="password_confirm" type="password" class="validate" required="required">
+              <label for="password_confirm">Подтверждение пароля</label>
+            </div>
+            
+            <div class="input-field">
+              <i class="material-icons prefix">assignment</i>
+              <select name="role">
+                <% roles.forEach(function(r) { %>
+                  <option value="<%= r.id %>" <% if(editedUser && editedUser.roleId == r.id) { %> selected <% } %> ><%= r.name %></option>
+                <% }) %>
+              </select>
+              <label>Роль</label>
+            </div>
+
+            <button class="waves-effect waves-light btn" type="submit">
+              OK
+              <i class="material-icons right" >send</i>
+            </button>
+          </div>
+        </form>
+  </div>
+  <script src="/libs/materialize/js/materialize.min.js"></script>
+  <script>
+    const selects = M.FormSelect.init(document.querySelectorAll('select'));
+  </script>
+</body>

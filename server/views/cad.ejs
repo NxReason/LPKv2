@@ -1,0 +1,216 @@
+<%- include('_header') %>
+<body>
+  <%- include('_navbar') %>
+  <div class="cad">
+    <div class="elements-menu">
+      <ul class="elements-list">
+        <li class="element-btn">
+          <i class="material-icons">print</i>
+          Устройство
+        </li>
+        <li class="element-btn">
+          <i class="material-icons">device_hub</i>
+          Соединение
+        </li>
+        <li class="element-btn">
+          <i class="material-icons">link</i>
+          Зависимость
+        </li>
+        <li class="element-btn">
+          <i class="material-icons">notifications_active</i>
+          Событие
+        </li>
+        <li class="element-btn">
+          <i class="material-icons">network_check</i>
+          Датчик
+        </li>
+        <li class="element-btn">
+          <i class="material-icons">keyboard</i>
+          Контроллер
+        </li>
+      </ul>
+    </div>
+
+    <div class="workspace">
+      <!-- FAKE ELEMENTS -->
+      <div class="cad-field">
+        <!-- DEVICES -->
+        <div class="device1" id="device-1">
+          <img src="/img/1.png" alt="device">
+        </div>
+
+        <div class="device2" id="device-2">
+          <img src="/img/2.png" alt="device">
+        </div>
+
+        <div class="device3" id="device-3">
+          <img src="/img/1.png" alt="device">
+        </div>
+
+        <!-- CONTROLLERS -->
+        <div class="controller" style="position: absolute; top: 500px; left: 60px;">
+          <span class="controller-name">SS-3010</span>
+          <div class="controller-range">
+            <span>0</span>
+            <input ref="range" type="range" min="0" max="1200">
+            <span>1200</span>
+          </div>
+          <div class="controller-range__current-value">
+            <span ref="current">400</span>
+          </div>
+        </div>
+  
+        <div class="controller" style="position: absolute; top: 500px; left: 260px;">
+          <span class="controller-name">SS-3010</span>
+          <div class="controller-range">
+            <span>0</span>
+            <input ref="range" type="range" min="0" max="1200">
+            <span>1200</span>
+          </div>
+          <div class="controller-range__current-value">
+            <span ref="current">400</span>
+          </div>
+        </div>
+
+        <div class="controller" style="position: absolute; top: 500px; left: 460px;">
+          <span class="controller-name">Подача щепы</span>
+          <label class="controller-switch">
+            <input ref="switch" type="checkbox">
+            <div class="controller-switch__slider"></div>
+          </label>
+        </div>
+
+        <!-- SENSORS -->
+        <div class="sensor" style="position: absolute; top: 250px; left: 440px;">
+          <p>Давление пара</p>
+          <div class="sensor-text">
+            <span class="sensor-text__value" ref="value">150</span>
+            <span ref="ext">p</span>
+          </div>
+        </div>
+      </div>
+      <!-- FAKE ELEMENTS END -->
+  
+      <div class="parameters-menu">
+        <div class="row">
+          <div class="col s12" style="padding:0;margin-bottom: 10px;">
+            <ul class="tabs">
+              <li class="tab col s4"><a class="active" href="#device-general">Общее</a></li>
+              <li class="tab col s4"><a href="#device-parameters">Параметры</a></li>
+              <li class="tab col s4"><a href="#device-states">Состояния</a></li>
+            </ul>
+          </div>
+          <div id="device-general" class="col s12">
+            <div class="input-field">
+              <input id="device_name" type="text" class="validate">
+              <label for="device_name">Название устройства</label>
+            </div>
+          
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>IMG</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" plaholder="Изображение устройства">
+              </div>
+            </div>
+  
+            <p>Расположение</p>
+            <div class="multi-input">
+              <div class="input-field" style="margin-right: 5px;">
+                <input id="device_x" type="text" class="validate">
+                <label for="device_x">X:</label>
+              </div>
+              <div class="input-field">
+                <input id="device_y" type="text" class="validate">
+                <label for="device_y">Y:</label>
+              </div>
+            </div>
+            
+            <p>Размер</p>
+            <div class="multi-input">
+              <div class="input-field" style="margin-right: 5px;">
+                <input id="device_w" type="text" class="validate">
+                <label for="device_w">W:</label>
+              </div>
+              <div class="input-field">
+                <input id="device_h" type="text" class="validate">
+                <label for="device_h">H:</label>
+              </div>
+            </div>
+          </div>
+
+          <div id="device-parameters" class="col s12">
+            <div class="parameter-example">
+              <div class="multi-input">
+                <div class="input-field" style="margin-right: 5px;">
+                  <input id="p1_name" type="text" class="validate">
+                  <label for="p1_name">Название</label>
+                </div>
+                <div class="input-field">
+                  <input id="p1_value" type="text" class="validate">
+                  <label for="p1_value">Значение</label>
+                </div>
+              </div>
+              <label>
+                <input type="checkbox" />
+                <span>Скрыть параметр от обучающегося</span>
+              </label>
+            </div>
+
+            <div class="parameter-example">
+              <div class="multi-input">
+                <div class="input-field" style="margin-right: 5px;">
+                  <input id="p2_name" type="text" class="validate">
+                  <label for="p2_name">Название</label>
+                </div>
+                <div class="input-field">
+                  <input id="p2_value" type="text" class="validate">
+                  <label for="p2_value">Значение</label>
+                </div>
+              </div>
+              <label>
+                <input type="checkbox" />
+                <span>Скрыть параметр от обучающегося</span>
+              </label>
+            </div>
+
+            <button class="btn">Добавить параметр</button>
+          </div>
+
+          <div id="device-states" class="col s12">
+            <button class="btn">Добавить состояние</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="libs/materialize/js/materialize.min.js"></script>
+  <script src="libs/jsplumb.min.js"></script>
+  <script>
+    const tabs = M.Tabs.init(document.querySelector('.tabs'));
+
+    setTimeout(() => {
+      jsPlumb.connect({
+        source: `device-1`,
+        target: `device-2`,
+        endpoint: 'Blank',
+        anchors: ['Right', 'Left'],
+        connector: ['Flowchart', { cornerRadius: 5, gap: 10 }],
+        paintStyle: { stroke: '#888', strokeWidth: 5 }
+      });
+
+      jsPlumb.connect({
+        source: `device-2`,
+        target: `device-3`,
+        endpoint: 'Blank',
+        anchors: ['Right', 'Left'],
+        connector: ['Flowchart', { cornerRadius: 2, gap: 10 }],
+        paintStyle: { stroke: '#888', strokeWidth: 5 }
+      });
+    }, 200);
+  </script>
+</body>
+</html>

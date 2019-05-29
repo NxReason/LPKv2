@@ -1,0 +1,23 @@
+.login-form, .register-form {
+  min-width: 400px;
+  max-width: 600px;
+  padding-top: 30px;
+}
+.form-header {
+  margin-top: 0;
+}
+.wrapper {
+  padding: 0 .75rem;
+}
+.info-prefix {
+  display: inline-block;
+  min-width: 60px;
+  margin-right: 10px;
+}
+.admin-list {
+  max-width: 1000px;
+  margin-left: 0;
+}
+.secondary-content {
+  margin-right: 10px;
+}

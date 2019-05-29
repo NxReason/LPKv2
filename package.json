@@ -1,14 +1,14 @@
 {
   "name": "lpk",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/index.js",
   "license": "MIT",
   "scripts": {
     "build": "npm run clean && webpack -p",
     "clean": "rm -f assets/js/app.bundle.js assets/css/styles.css",
     "wds": "set NODE_ENV=development&& webpack-dev-server",
-    "start": "node index.js",
-    "dev": "set NODE_ENV=development&& nodemon index.js"
+    "start": "node server/index.js",
+    "dev": "set NODE_ENV=development&& nodemon server/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -30,6 +30,7 @@
     "axios": "^0.17.0",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "jsplumb": "^2.5.7",

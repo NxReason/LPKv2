@@ -1,11 +1,12 @@
-const path = require('path');
 const bcrypt = require('bcrypt');
 
-const { users } = require('../models');
-const template = require('../views');
+const { users, scenarios, roles } = require('../models');
 
+/**
+ * LOGIN
+ */
 function login(req, res) {
-  res.status(200).sendFile(path.join(__dirname, '../views/login.html'));
+  res.render('login');
 }
 function tryLogin(req, res) {
   const { username, password } = req.body;
@@ -29,8 +30,11 @@ function tryLogin(req, res) {
     });
 }
 
+/**
+ * REGISTER
+ */
 function register(req, res) {
-  res.status(200).sendFile(path.join(__dirname, '../views/register.html'));
+  res.render('register');
 }
 function tryRegister(req, res) {
   const user = req.body;
@@ -52,20 +56,67 @@ function _validateUserInput(user) {
   return true;
 }
 
+/**
+ * PAGES
+ */
 function index(req, res) {
-  res.status(200).send(template(req.session.user.roleId));
+  const { user } = req.session;
+  res.render('index', { user });
 }
 function cad(req, res) {
   if (req.session.user.roleId < 2) { res.redirect('/forbidden'); return; }
-  res.sendFile(path.join(__dirname, '../views/cad.html'));
+
+  const { user } = req.session;
+  res.render('cad', { user });
 }
 function admin(req, res) {
-  if (req.session.user.roleId < 3) { res.redirect('/forbidden'); return; }
-  res.sendFile(path.join(__dirname, '../views/admin.html'));
+  const { user } = req.session;
+  if (user.roleId < 3) { res.redirect('/forbidden'); return; }
+
+  const models = scenarios.all();
+  users.findAll({
+    include: [{ model: roles }]
+  })
+    .then(users => {
+      res.render('admin', { user, models, users });
+    });
+}
+function userNew(req, res) {
+  const { user } = req.session;
+  roles.findAll()
+    .then(roles => {
+      res.render('user-form', {
+        user,
+        title: 'Добавить пользователя',
+        roles,
+        editedUser: false
+      });
+    });
+}
+function userEdit(req, res) {
+  const { userId } = req.params;
+  const { user } = req.session;
+
+  const pUser = users.findOne({
+    where: { id: userId }
+  }, {
+    include: [{ models: roles }]
+  });
+  const pRoles = roles.findAll();
+  Promise.all([pUser, pRoles])
+    .then(queryResult => {
+      console.log(queryResult[0]);
+      res.render('user-form', {
+        user,
+        title: 'Изменить данные пользователя',
+        editedUser: queryResult[0],
+        roles: queryResult[1]
+      });
+    });
 }
 
 function forbidden(req, res) {
-  res.status(403).sendFile(path.join(__dirname, '../views/forbidden.html'));
+  res.render('forbidden');
 }
 
 function apiNotFound(req, res) {
@@ -84,6 +135,8 @@ module.exports = {
   index,
   cad,
   admin,
+  userNew,
+  userEdit,
   forbidden,
   apiNotFound,
   notFound
