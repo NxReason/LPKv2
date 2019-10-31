@@ -35,6 +35,6 @@
     "express-session": "^1.15.6",
     "jsplumb": "^2.5.7",
     "mysql2": "^1.6.5",
-    "sequelize": "^5.1.0"
+    "sequelize": "^5.15.1"
   }
 }
